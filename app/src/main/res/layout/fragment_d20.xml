@@ -17,7 +17,8 @@
             android:text="D4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
 
         <TextView
             android:id="@+id/textView3"
@@ -34,9 +35,49 @@
             android:id="@+id/D20NonButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="D20"
             android:backgroundTint="#4CAF50"
+            android:text="D20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/D20ButtonD12" />
+
+        <Button
+            android:id="@+id/D20ButtonD6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/D20ButtonD4" />
+
+        <Button
+            android:id="@+id/D20ButtonD8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/D20ButtonD6" />
+
+        <Button
+            android:id="@+id/D20ButtonD10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/D20ButtonD8" />
+
+        <Button
+            android:id="@+id/D20ButtonD12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/D20ButtonD10" />
+
+        <Button
+            android:id="@+id/D20ButtonD100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/D20NonButton" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

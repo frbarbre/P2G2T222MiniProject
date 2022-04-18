@@ -39,6 +39,46 @@ public class D12Fragment extends Fragment {
             }
         });
 
+        binding.D12ButtonD6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D12Fragment.this)
+                        .navigate(R.id.action_d12Fragment_to_d6Fragment);
+            }
+        });
+
+        binding.D12ButtonD8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D12Fragment.this)
+                        .navigate(R.id.action_d12Fragment_to_d8Fragment);
+            }
+        });
+
+        binding.D12ButtonD10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D12Fragment.this)
+                        .navigate(R.id.action_d12Fragment_to_D10Fragment);
+            }
+        });
+
+        binding.D12ButtonD20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D12Fragment.this)
+                        .navigate(R.id.action_d12Fragment_to_d20Fragment);
+            }
+        });
+
+        binding.D12ButtonD100.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D12Fragment.this)
+                        .navigate(R.id.action_d12Fragment_to_d100Fragment);
+            }
+        });
+
     }
 
     @Override

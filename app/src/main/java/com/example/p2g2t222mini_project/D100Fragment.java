@@ -38,6 +38,46 @@ public class D100Fragment extends Fragment {
                         .navigate(R.id.action_d100Fragment_to_D4Fragment);
             }
         });
+
+        binding.D100ButtonD6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D100Fragment.this)
+                        .navigate(R.id.action_d100Fragment_to_d6Fragment);
+            }
+        });
+
+        binding.D100ButtonD8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D100Fragment.this)
+                        .navigate(R.id.action_d100Fragment_to_d8Fragment);
+            }
+        });
+
+        binding.D100ButtonD10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D100Fragment.this)
+                        .navigate(R.id.action_d100Fragment_to_D10Fragment);
+            }
+        });
+
+        binding.D100ButtonD12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D100Fragment.this)
+                        .navigate(R.id.action_d100Fragment_to_d12Fragment);
+            }
+        });
+
+        binding.D100ButtonD20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D100Fragment.this)
+                        .navigate(R.id.action_d100Fragment_to_d20Fragment);
+            }
+        });
     }
 
     @Override

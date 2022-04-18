@@ -40,6 +40,46 @@ public class D20Fragment extends Fragment {
             }
         });
 
+        binding.D20ButtonD6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D20Fragment.this)
+                        .navigate(R.id.action_d20Fragment_to_d6Fragment);
+            }
+        });
+
+        binding.D20ButtonD8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D20Fragment.this)
+                        .navigate(R.id.action_d20Fragment_to_d8Fragment);
+            }
+        });
+
+        binding.D20ButtonD12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D20Fragment.this)
+                        .navigate(R.id.action_d20Fragment_to_d12Fragment);
+            }
+        });
+
+        binding.D20ButtonD100.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D20Fragment.this)
+                        .navigate(R.id.action_d20Fragment_to_d100Fragment);
+            }
+        });
+
+        binding.D20ButtonD10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D20Fragment.this)
+                        .navigate(R.id.action_d20Fragment_to_D10Fragment);
+            }
+        });
+
     }
 
     @Override

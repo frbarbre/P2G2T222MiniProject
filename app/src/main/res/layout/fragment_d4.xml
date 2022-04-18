@@ -29,17 +29,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="D8"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/D4ButtonD6" />
 
     <Button
         android:id="@+id/D4ButtonD6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="D6"
-        app:layout_constraintBottom_toTopOf="@+id/D4ButtonD8"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/D4NonButton" />
 
     <Button
         android:id="@+id/D4ButtonD12"
@@ -69,8 +68,10 @@
         android:id="@+id/D4NonButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="D4"
         android:backgroundTint="#4CAF50"
-        app:layout_constraintBottom_toTopOf="@+id/D4ButtonD6"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="D4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
 </androidx.constraintlayout.widget.ConstraintLayout>
