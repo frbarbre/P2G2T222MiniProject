@@ -36,5 +36,17 @@
         <action
             android:id="@+id/action_d8Fragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_d8Fragment_to_d6Fragment"
+            app:destination="@id/d6Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/d6Fragment"
+        android:name="com.example.p2g2t222mini_project.D6Fragment"
+        android:label="fragment_d6"
+        tools:layout="@layout/fragment_d6" >
+        <action
+            android:id="@+id/action_d6Fragment_to_d8Fragment"
+            app:destination="@id/d8Fragment" />
     </fragment>
 </navigation>

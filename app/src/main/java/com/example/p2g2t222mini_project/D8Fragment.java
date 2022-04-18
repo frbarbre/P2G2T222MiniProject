@@ -38,6 +38,14 @@ public class D8Fragment extends Fragment {
             }
         });
 
+        binding.D8ButtonD6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D8Fragment.this)
+                        .navigate(R.id.action_d8Fragment_to_d6Fragment);
+            }
+        });
+
     }
 
     @Override
