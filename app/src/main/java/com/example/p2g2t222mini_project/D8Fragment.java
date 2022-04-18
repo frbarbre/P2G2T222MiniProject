@@ -45,6 +45,38 @@ public class D8Fragment extends Fragment {
             }
         });
 
+        binding.D8ButtonD10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D8Fragment.this)
+                        .navigate(R.id.action_d8Fragment_to_D10Fragment);
+            }
+        });
+
+        binding.D8ButtonD12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D8Fragment.this)
+                        .navigate(R.id.action_d8Fragment_to_d12Fragment);
+            }
+        });
+
+        binding.D8ButtonD20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D8Fragment.this)
+                        .navigate(R.id.action_d8Fragment_to_d20Fragment);
+            }
+        });
+
+        binding.D8ButtonD100.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D8Fragment.this)
+                        .navigate(R.id.action_d8Fragment_to_d100Fragment);
+            }
+        });
+
     }
 
     @Override

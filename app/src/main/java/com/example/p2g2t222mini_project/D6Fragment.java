@@ -37,6 +37,46 @@ public class D6Fragment extends Fragment {
             }
         });
 
+        binding.D6ButtonD4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D6Fragment.this)
+                        .navigate(R.id.action_d6Fragment_to_D4Fragment);
+            }
+        });
+
+        binding.D6ButtonD10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D6Fragment.this)
+                        .navigate(R.id.action_d6Fragment_to_D10Fragment);
+            }
+        });
+
+        binding.D6ButtonD12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D6Fragment.this)
+                        .navigate(R.id.action_d6Fragment_to_d12Fragment);
+            }
+        });
+
+        binding.D6ButtonD20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D6Fragment.this)
+                        .navigate(R.id.action_d6Fragment_to_d20Fragment);
+            }
+        });
+
+        binding.D6ButtonD100.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(D6Fragment.this)
+                        .navigate(R.id.action_d6Fragment_to_d100Fragment);
+            }
+        });
+
     }
 
     @Override
