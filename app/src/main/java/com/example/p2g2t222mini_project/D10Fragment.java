@@ -9,11 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.p2g2t222mini_project.databinding.FragmentFirstBinding;
+import com.example.p2g2t222mini_project.databinding.FragmentD10Binding;
+import com.example.p2g2t222mini_project.databinding.FragmentD10Binding;
 
-public class FirstFragment extends Fragment {
+public class D10Fragment extends Fragment {
 
-    private FragmentFirstBinding binding;
+    private FragmentD10Binding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +22,7 @@ public class FirstFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = FragmentD10Binding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -29,19 +30,11 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
+        binding.D10ButtonD4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
-            }
-        });
-
-        binding.FirstButtonD8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_d8Fragment);
+                NavHostFragment.findNavController(D10Fragment.this)
+                        .navigate(R.id.action_D10Fragment_to_D4Fragment);
             }
         });
     }

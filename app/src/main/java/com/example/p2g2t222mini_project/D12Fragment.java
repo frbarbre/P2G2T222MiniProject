@@ -9,11 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.p2g2t222mini_project.databinding.FragmentD8Binding;
+import com.example.p2g2t222mini_project.databinding.FragmentD12Binding;
+import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
+import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 
-public class D8Fragment extends Fragment {
+public class D12Fragment extends Fragment {
 
-    private FragmentD8Binding binding;
+    private FragmentD12Binding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +23,7 @@ public class D8Fragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentD8Binding.inflate(inflater, container, false);
+        binding = FragmentD12Binding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -29,19 +31,11 @@ public class D8Fragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.D8ButtonD4.setOnClickListener(new View.OnClickListener() {
+        binding.D12ButtonD4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(D8Fragment.this)
-                        .navigate(R.id.action_d8Fragment_to_D4Fragment);
-            }
-        });
-
-        binding.D8ButtonD6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(D8Fragment.this)
-                        .navigate(R.id.action_d8Fragment_to_d6Fragment);
+                NavHostFragment.findNavController(D12Fragment.this)
+                        .navigate(R.id.action_d12Fragment_to_D4Fragment);
             }
         });
 

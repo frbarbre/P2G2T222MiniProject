@@ -4,25 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".D8Fragment">
+    tools:context=".D12Fragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="D8 page"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.23000002" />
-
         <Button
-            android:id="@+id/D8ButtonD4"
+            android:id="@+id/D12ButtonD4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="D4"
@@ -31,20 +20,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/D8ButtonD6"
+            android:id="@+id/D12NonButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="D6"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/D8ButtonD4" />
-
-        <Button
-            android:id="@+id/D8NonButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="D8"
+            android:text="D12"
             android:backgroundTint="#4CAF50"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/D8ButtonD6" />
+            app:layout_constraintTop_toBottomOf="@+id/D12ButtonD4" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

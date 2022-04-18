@@ -3,50 +3,181 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/D4Fragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.p2g2t222mini_project.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/D4Fragment"
+        android:name="com.example.p2g2t222mini_project.D4Fragment"
+        android:label="@string/d4_fragment_label"
+        tools:layout="@layout/fragment_d4">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-        <action
-            android:id="@+id/action_FirstFragment_to_d8Fragment"
+            android:id="@+id/action_D4Fragment_to_d8Fragment"
             app:destination="@id/d8Fragment" />
+        <action
+            android:id="@+id/action_D4Fragment_to_D10Fragment"
+            app:destination="@id/D10Fragment" />
+        <action
+            android:id="@+id/action_D4Fragment_to_d6Fragment"
+            app:destination="@id/d6Fragment" />
+        <action
+            android:id="@+id/action_D4Fragment_to_d12Fragment"
+            app:destination="@id/d12Fragment" />
+        <action
+            android:id="@+id/action_D4Fragment_to_d20Fragment"
+            app:destination="@id/d20Fragment" />
+        <action
+            android:id="@+id/action_D4Fragment_to_d100Fragment"
+            app:destination="@id/d100Fragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.p2g2t222mini_project.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/D10Fragment"
+        android:name="com.example.p2g2t222mini_project.D10Fragment"
+        android:label="@string/d10_fragment_label"
+        tools:layout="@layout/fragment_d10">
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_D10Fragment_to_D4Fragment"
+            app:destination="@id/D4Fragment" />
+        <action
+            android:id="@+id/action_D10Fragment_to_d8Fragment"
+            app:destination="@id/d8Fragment" />
+        <action
+            android:id="@+id/action_D10Fragment_to_d20Fragment"
+            app:destination="@id/d20Fragment" />
+        <action
+            android:id="@+id/action_D10Fragment_to_d12Fragment"
+            app:destination="@id/d12Fragment" />
+        <action
+            android:id="@+id/action_D10Fragment_to_d6Fragment"
+            app:destination="@id/d6Fragment" />
+        <action
+            android:id="@+id/action_D10Fragment_to_d100Fragment"
+            app:destination="@id/d100Fragment" />
     </fragment>
     <fragment
         android:id="@+id/d8Fragment"
         android:name="com.example.p2g2t222mini_project.D8Fragment"
-        android:label="fragment_d8"
+        android:label="D8 Fragment"
         tools:layout="@layout/fragment_d8" >
-        <action
-            android:id="@+id/action_d8Fragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
         <action
             android:id="@+id/action_d8Fragment_to_d6Fragment"
             app:destination="@id/d6Fragment" />
+        <action
+            android:id="@+id/action_d8Fragment_to_D4Fragment"
+            app:destination="@id/D4Fragment" />
+        <action
+            android:id="@+id/action_d8Fragment_to_D10Fragment"
+            app:destination="@id/D10Fragment" />
+        <action
+            android:id="@+id/action_d8Fragment_to_d100Fragment"
+            app:destination="@id/d100Fragment" />
+        <action
+            android:id="@+id/action_d8Fragment_to_d6Fragment2"
+            app:destination="@id/d6Fragment" />
+        <action
+            android:id="@+id/action_d8Fragment_to_d12Fragment"
+            app:destination="@id/d12Fragment" />
+        <action
+            android:id="@+id/action_d8Fragment_to_d20Fragment"
+            app:destination="@id/d20Fragment" />
     </fragment>
     <fragment
         android:id="@+id/d6Fragment"
         android:name="com.example.p2g2t222mini_project.D6Fragment"
-        android:label="fragment_d6"
+        android:label="D6 Fragment"
         tools:layout="@layout/fragment_d6" >
         <action
             android:id="@+id/action_d6Fragment_to_d8Fragment"
             app:destination="@id/d8Fragment" />
+        <action
+            android:id="@+id/action_d6Fragment_to_d100Fragment"
+            app:destination="@id/d100Fragment" />
+        <action
+            android:id="@+id/action_d6Fragment_to_d8Fragment2"
+            app:destination="@id/d8Fragment" />
+        <action
+            android:id="@+id/action_d6Fragment_to_d12Fragment"
+            app:destination="@id/d12Fragment" />
+        <action
+            android:id="@+id/action_d6Fragment_to_d20Fragment"
+            app:destination="@id/d20Fragment" />
+        <action
+            android:id="@+id/action_d6Fragment_to_D10Fragment"
+            app:destination="@id/D10Fragment" />
+        <action
+            android:id="@+id/action_d6Fragment_to_D4Fragment"
+            app:destination="@id/D4Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/d12Fragment"
+        android:name="com.example.p2g2t222mini_project.D12Fragment"
+        android:label="D12 Fragment"
+        tools:layout="@layout/fragment_d12" >
+        <action
+            android:id="@+id/action_d12Fragment_to_D4Fragment"
+            app:destination="@id/D4Fragment" />
+        <action
+            android:id="@+id/action_d12Fragment_to_d20Fragment"
+            app:destination="@id/d20Fragment" />
+        <action
+            android:id="@+id/action_d12Fragment_to_D10Fragment"
+            app:destination="@id/D10Fragment" />
+        <action
+            android:id="@+id/action_d12Fragment_to_d8Fragment"
+            app:destination="@id/d8Fragment" />
+        <action
+            android:id="@+id/action_d12Fragment_to_d6Fragment"
+            app:destination="@id/d6Fragment" />
+        <action
+            android:id="@+id/action_d12Fragment_to_d100Fragment"
+            app:destination="@id/d100Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/d20Fragment"
+        android:name="com.example.p2g2t222mini_project.D20Fragment"
+        android:label="D20 Fragment"
+        tools:layout="@layout/fragment_d20" >
+        <action
+            android:id="@+id/action_d20Fragment_to_D4Fragment"
+            app:destination="@id/D4Fragment" />
+        <action
+            android:id="@+id/action_d20Fragment_to_D10Fragment"
+            app:destination="@id/D10Fragment" />
+        <action
+            android:id="@+id/action_d20Fragment_to_d12Fragment"
+            app:destination="@id/d12Fragment" />
+        <action
+            android:id="@+id/action_d20Fragment_to_d8Fragment"
+            app:destination="@id/d8Fragment" />
+        <action
+            android:id="@+id/action_d20Fragment_to_d6Fragment"
+            app:destination="@id/d6Fragment" />
+        <action
+            android:id="@+id/action_d20Fragment_to_d100Fragment"
+            app:destination="@id/d100Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/d100Fragment"
+        android:name="com.example.p2g2t222mini_project.D100Fragment"
+        android:label="D100 Fragment"
+        tools:layout="@layout/fragment_d100" >
+        <action
+            android:id="@+id/action_d100Fragment_to_D4Fragment"
+            app:destination="@id/D4Fragment" />
+        <action
+            android:id="@+id/action_d100Fragment_to_d6Fragment"
+            app:destination="@id/d6Fragment" />
+        <action
+            android:id="@+id/action_d100Fragment_to_d12Fragment"
+            app:destination="@id/d12Fragment" />
+        <action
+            android:id="@+id/action_d100Fragment_to_d20Fragment"
+            app:destination="@id/d20Fragment" />
+        <action
+            android:id="@+id/action_d100Fragment_to_d8Fragment"
+            app:destination="@id/d8Fragment" />
+        <action
+            android:id="@+id/action_d100Fragment_to_D10Fragment"
+            app:destination="@id/D10Fragment" />
     </fragment>
 </navigation>
