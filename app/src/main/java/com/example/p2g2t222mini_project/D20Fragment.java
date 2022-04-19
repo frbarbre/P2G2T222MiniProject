@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,9 +15,12 @@ import com.example.p2g2t222mini_project.databinding.FragmentD20Binding;
 import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 
+import java.util.Random;
+
 public class D20Fragment extends Fragment {
 
     private FragmentD20Binding binding;
+    private TextView rollText20;
 
     @Override
     public View onCreateView(
@@ -31,6 +35,8 @@ public class D20Fragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        rollText20 = (TextView) getView().findViewById(R.id.D20RollText);
 
         binding.D20ButtonD4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +83,17 @@ public class D20Fragment extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(D20Fragment.this)
                         .navigate(R.id.action_d20Fragment_to_D10Fragment);
+            }
+        });
+
+        binding.D20RollButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final int min = 1;
+                final int max = 20;
+                final int random1to20 = new Random().nextInt((max - min) +1) +min;
+                Integer number = random1to20;
+                rollText20.setText(number.toString());
             }
         });
 
