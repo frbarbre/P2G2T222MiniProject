@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -11,9 +12,12 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.p2g2t222mini_project.databinding.FragmentD6Binding;
 
+import java.util.Random;
+
 public class D6Fragment extends Fragment {
 
     private FragmentD6Binding binding;
+    private TextView rollText6;
 
     @Override
     public View onCreateView(
@@ -28,6 +32,8 @@ public class D6Fragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        rollText6 = (TextView) getView().findViewById(R.id.D6RollText);
 
         binding.D6ButtonD8.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +83,16 @@ public class D6Fragment extends Fragment {
             }
         });
 
+        binding.D6RollButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final int min = 1;
+                final int max = 6;
+                final int random1to6 = new Random().nextInt((max - min) +1) +min;
+                Integer number = random1to6;
+                rollText6.setText(number.toString());
+            }
+        });
     }
 
     @Override
