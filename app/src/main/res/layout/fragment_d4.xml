@@ -77,10 +77,11 @@
         app:layout_constraintVertical_bias="0.25" />
 
     <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gifImageView"
+        android:id="@+id/D4GIF"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/d4_red"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/D4RollButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -99,6 +100,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.812" />
 
+    <ImageView
+        android:id="@+id/D4StaticDie"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:adjustViewBounds="false"
+        android:src="@drawable/d4_1"
+        app:layout_constraintBottom_toTopOf="@+id/D4RollButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_first" />
+
     <TextView
         android:id="@+id/D4RollText"
         android:layout_width="wrap_content"
@@ -106,10 +119,10 @@
         android:textColor="@color/white"
         android:textSize="50dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/gifImageView"
-        app:layout_constraintEnd_toEndOf="@+id/gifImageView"
-        app:layout_constraintStart_toStartOf="@+id/gifImageView"
-        app:layout_constraintTop_toTopOf="@+id/gifImageView"
+        app:layout_constraintBottom_toBottomOf="@+id/D4GIF"
+        app:layout_constraintEnd_toEndOf="@+id/D4GIF"
+        app:layout_constraintStart_toStartOf="@+id/D4GIF"
+        app:layout_constraintTop_toTopOf="@+id/D4GIF"
         app:layout_constraintVertical_bias="0.349" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

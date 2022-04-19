@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,10 +17,14 @@ import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 
 import java.util.Random;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class D4Fragment extends Fragment {
 
     private FragmentD4Binding binding;
     private TextView rollText4;
+    private GifImageView D4gif;
+    private ImageView D4static;
 
     @Override
     public View onCreateView(
@@ -36,6 +41,8 @@ public class D4Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         rollText4 = (TextView) getView().findViewById(R.id.D4RollText);
+        D4gif = (GifImageView) getView().findViewById(R.id.D4GIF);
+        D4static = (ImageView) getView().findViewById(R.id.D4StaticDie);
 
         binding.D4ButtonD10.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +96,10 @@ public class D4Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 binding.D4RollButton.setEnabled(false);
-
+                String resetString = " ";
+                rollText4.setText(resetString);
+                D4gif.setVisibility(View.VISIBLE);
+                D4static.setVisibility(View.GONE);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -99,6 +109,8 @@ public class D4Fragment extends Fragment {
                         Integer number = random1to4;
                         rollText4.setText(number.toString());
                         binding.D4RollButton.setEnabled(true);
+                        D4gif.setVisibility(View.GONE);
+                        D4static.setVisibility(View.VISIBLE);
                     }
                 },2000); //this is the delay before button is re-activated
 
