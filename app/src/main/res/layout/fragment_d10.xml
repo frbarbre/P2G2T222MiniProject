@@ -1,98 +1,114 @@
- <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".D10Fragment">
+<?xml version="1.0" encoding="utf-8"?>
+ <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:background="@color/darkgreybackground"
+     tools:context=".D10Fragment">
 
-    <TextView
-        android:id="@+id/textview_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/D10ButtonD4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+     <TextView
+         android:id="@+id/textview_second"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         app:layout_constraintBottom_toTopOf="@id/D10ButtonD4"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/D10ButtonD4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/D10ButtonToD4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+     <Button
+         android:id="@+id/D10ButtonD4"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/D10ButtonToD4"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintVertical_bias="0.25" />
 
-    <Button
-        android:id="@+id/D10NonButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#4CAF50"
-        android:text="D10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/D10ButtonD8" />
+     <Button
+         android:id="@+id/D10NonButton"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:backgroundTint="#4CAF50"
+         android:text="D10"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/D10ButtonD8" />
 
-    <Button
-        android:id="@+id/D10ButtonD6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="D6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/D10ButtonD4" />
+     <Button
+         android:id="@+id/D10ButtonD6"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="D6"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/D10ButtonD4" />
 
-    <Button
-        android:id="@+id/D10ButtonD8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="D8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/D10ButtonD6" />
+     <Button
+         android:id="@+id/D10ButtonD8"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="D8"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/D10ButtonD6" />
 
-    <Button
-        android:id="@+id/D10ButtonD12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="D12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/D10NonButton" />
+     <Button
+         android:id="@+id/D10ButtonD12"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="D12"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/D10NonButton" />
 
-    <Button
-        android:id="@+id/D10ButtonD20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="D20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/D10ButtonD12" />
+     <Button
+         android:id="@+id/D10ButtonD20"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="D20"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/D10ButtonD12" />
 
-    <Button
-        android:id="@+id/D10ButtonD100"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="D100"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/D10ButtonD20" />
+     <Button
+         android:id="@+id/D10ButtonD100"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="D100"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/D10ButtonD20" />
 
-    <TextView
-        android:id="@+id/D10RollText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+     <Button
+         android:id="@+id/D10RollButton"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Roll"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.498"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintVertical_bias="0.795" />
 
-    <Button
-        android:id="@+id/D10RollButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Roll"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.69" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+     <pl.droidsonroids.gif.GifImageView
+         android:id="@+id/gifImageView2"
+         android:layout_width="150dp"
+         android:layout_height="150dp"
+         android:src="@drawable/d10_red"
+         app:layout_constraintBottom_toTopOf="@+id/D10RollButton"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.498"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/textview_second" />
+
+     <TextView
+         android:id="@+id/D10RollText"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textColor="@color/white"
+         android:textSize="35sp"
+         android:textStyle="bold"
+         app:layout_constraintBottom_toBottomOf="@+id/gifImageView2"
+         app:layout_constraintEnd_toEndOf="@+id/gifImageView2"
+         app:layout_constraintStart_toStartOf="@+id/gifImageView2"
+         app:layout_constraintTop_toTopOf="@+id/gifImageView2"
+         app:layout_constraintVertical_bias="0.45" />
+
+ </androidx.constraintlayout.widget.ConstraintLayout>
