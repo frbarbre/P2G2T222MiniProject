@@ -20,7 +20,7 @@ import java.util.Random;
 public class D100Fragment extends Fragment {
 
     private FragmentD100Binding binding;
-    private TextView rollText;
+    private TextView rollText100;
 
     @Override
     public View onCreateView(
@@ -36,7 +36,7 @@ public class D100Fragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        rollText = (TextView) getView().findViewById(R.id.D100RollText);
+        rollText100 = (TextView) getView().findViewById(R.id.D100RollText);
 
         binding.D100ButtonD4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +95,7 @@ public class D100Fragment extends Fragment {
                 final int max = 100;
                 final int random1to100 = new Random().nextInt((max - min) +1) +min;
                 Integer number = random1to100;
-                rollText.setText(number.toString());
+                rollText100.setText(number.toString());
             }
         });
     }
