@@ -1,6 +1,7 @@
 package com.example.p2g2t222mini_project;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.p2g2t222mini_project.databinding.FragmentD8Binding;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class D8Fragment extends Fragment {
 
@@ -86,11 +88,20 @@ public class D8Fragment extends Fragment {
         binding.D8RollButon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final int min = 1;
-                final int max = 8;
-                final int random1to8 = new Random().nextInt((max - min) +1) +min;
-                Integer number = random1to8;
-                rollText8.setText(number.toString());
+                binding.D8RollButon.setEnabled(false);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        final int min = 1;
+                        final int max = 8;
+                        final int random1to8 = new Random().nextInt((max - min) +1) +min;
+                        Integer number = random1to8;
+                        rollText8.setText(number.toString());
+                        binding.D8RollButon.setEnabled(true);
+                    }
+                },2000); //this is the delay before button is re-activated
+
             }
         });
     }

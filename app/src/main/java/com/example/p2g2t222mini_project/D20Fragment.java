@@ -1,6 +1,7 @@
 package com.example.p2g2t222mini_project;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,11 +90,20 @@ public class D20Fragment extends Fragment {
         binding.D20RollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final int min = 1;
-                final int max = 20;
-                final int random1to20 = new Random().nextInt((max - min) +1) +min;
-                Integer number = random1to20;
-                rollText20.setText(number.toString());
+                binding.D20RollButton.setEnabled(false);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        final int min = 1;
+                        final int max = 20;
+                        final int random1to20 = new Random().nextInt((max - min) +1) +min;
+                        Integer number = random1to20;
+                        rollText20.setText(number.toString());
+                        binding.D20RollButton.setEnabled(true);
+                    }
+                },2000); //this is the delay before button is re-activated
+
             }
         });
 
