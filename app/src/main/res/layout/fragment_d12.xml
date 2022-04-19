@@ -4,11 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkgreybackground"
     tools:context=".D12Fragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textview_second"
+            android:layout_width="2dp"
+            android:layout_height="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/D12ButtonD4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/D12ButtonD4"
@@ -69,17 +79,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/D12ButtonD20" />
 
-        <TextView
-            android:id="@+id/D12RollText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.45" />
-
         <Button
             android:id="@+id/D12RollButton"
             android:layout_width="wrap_content"
@@ -87,8 +86,35 @@
             android:text="Roll"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.69" />
+            app:layout_constraintVertical_bias="0.816" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gifImageView2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="44dp"
+            android:src="@drawable/d12_red"
+            app:layout_constraintBottom_toTopOf="@+id/D12RollButton"
+            app:layout_constraintEnd_toEndOf="@+id/D12NonButton"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_second"
+            app:layout_constraintVertical_bias="0.561" />
+
+        <TextView
+            android:id="@+id/D12RollText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/gifImageView2"
+            app:layout_constraintEnd_toEndOf="@+id/gifImageView2"
+            app:layout_constraintStart_toStartOf="@+id/gifImageView2"
+            app:layout_constraintTop_toTopOf="@+id/gifImageView2"
+            app:layout_constraintVertical_bias="0.48" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
