@@ -1,10 +1,12 @@
 package com.example.p2g2t222mini_project;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,10 +18,14 @@ import com.example.p2g2t222mini_project.databinding.FragmentD10Binding;
 
 import java.util.Random;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class D10Fragment extends Fragment {
 
     private FragmentD10Binding binding;
     private TextView rollText10;
+    private ImageView D10static;
+    private GifImageView D10gif;
 
     @Override
     public View onCreateView(
@@ -36,6 +42,8 @@ public class D10Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         rollText10 = (TextView) getView().findViewById(R.id.D10RollText);
+        D10static = (ImageView) getView().findViewById(R.id.D10Static);
+        D10gif = (GifImageView) getView().findViewById(R.id.D10GIF);
 
         binding.D10ButtonD4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +97,10 @@ public class D10Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 binding.D10RollButton.setEnabled(false);
-
+                String resetString = " ";
+                rollText10.setText(resetString);
+                D10gif.setVisibility(View.VISIBLE);
+                D10static.setVisibility(View.GONE);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -99,6 +110,8 @@ public class D10Fragment extends Fragment {
                         Integer number = random1to10;
                         rollText10.setText(number.toString());
                         binding.D10RollButton.setEnabled(true);
+                        D10gif.setVisibility(View.GONE);
+                        D10static.setVisibility(View.VISIBLE);
                     }
                 },2000); //this is the delay before button is re-activated
 

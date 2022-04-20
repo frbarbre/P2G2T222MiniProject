@@ -92,6 +92,19 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/d10_red"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/D10RollButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/D10PageText"
+        app:layout_constraintVertical_bias="0.594" />
+
+    <ImageView
+        android:id="@+id/D10Static"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/d10_red1"
         app:layout_constraintBottom_toTopOf="@+id/D10RollButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -113,4 +126,4 @@
          app:layout_constraintVertical_bias="0.45" />
 
 
- </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -95,8 +95,20 @@
             android:id="@+id/D12GIF"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginTop="44dp"
             android:src="@drawable/d12_red"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/D12RollButton"
+            app:layout_constraintEnd_toEndOf="@+id/D12NonButton"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/D12PageText"
+            app:layout_constraintVertical_bias="0.561" />
+
+        <ImageView
+            android:id="@+id/D12Static"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/d12_red1"
             app:layout_constraintBottom_toTopOf="@+id/D12RollButton"
             app:layout_constraintEnd_toEndOf="@+id/D12NonButton"
             app:layout_constraintHorizontal_bias="0.498"
@@ -111,10 +123,11 @@
             android:textColor="@color/white"
             android:textSize="35sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/D12GIF"
+            app:layout_constraintBottom_toTopOf="@+id/D12RollButton"
             app:layout_constraintEnd_toEndOf="@+id/D12GIF"
             app:layout_constraintStart_toStartOf="@+id/D12GIF"
-            app:layout_constraintTop_toTopOf="@+id/D12GIF"
-            app:layout_constraintVertical_bias="0.48" />
+            app:layout_constraintTop_toBottomOf="@+id/D12PageText"
+            app:layout_constraintVertical_bias="0.55" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
