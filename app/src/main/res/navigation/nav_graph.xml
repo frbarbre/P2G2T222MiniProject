@@ -180,4 +180,14 @@
             android:id="@+id/action_d100Fragment_to_D10Fragment"
             app:destination="@id/D10Fragment" />
     </fragment>
+    <fragment
+        android:id="@+id/diceFragment"
+        android:name="com.example.p2g2t222mini_project.DiceFragment"
+        android:label="fragment_dice"
+        tools:layout="@layout/fragment_dice" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.p2g2t222mini_project.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
 </navigation>

@@ -2,21 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_recents"
+        android:id="@+id/historyFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_sentiment_very_satisfied_24"
-        android:title="Recents"
+        android:title="History"
         app:showAsAction="ifRoom" />
+
     <item
-        android:id="@+id/action_favorites"
-        android:enabled="true"
-        android:icon="@drawable/ic_baseline_home_24"
-        android:title="Favorites"
-        app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/action_nearby"
+        android:id="@+id/diceFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_settings_24"
-        android:title="Nearby"
+        android:title="Dice"
         app:showAsAction="ifRoom" />
 </menu>
