@@ -55,7 +55,7 @@ public class D20Fragment extends Fragment {
             D20pagetext.setText("yay it worked. Current accel:" + (int) accelCurrentValue);
 
 
-            if (accelCurrentValue > 18 && ranRecently == false){
+            if (accelChangeValue > 12 && ranRecently == false){
                 ranRecently = true;
                 binding.D20RollButton.setEnabled(false);
                 String resetString = " ";
