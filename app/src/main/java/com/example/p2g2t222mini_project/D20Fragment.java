@@ -36,7 +36,6 @@ public class D20Fragment extends Fragment {
     private GifImageView D20gif;
     private double accelCurrentValue;
     private double accelPreviousValue;
-    private TextView D20pagetext;
     private boolean ranRecently = false;
 
     private SensorManager mSensorManager;
@@ -51,8 +50,6 @@ public class D20Fragment extends Fragment {
             accelCurrentValue = Math.sqrt((x*x + y*y + z*z));
             double accelChangeValue = Math.abs(accelCurrentValue - accelPreviousValue);
             accelPreviousValue = accelCurrentValue;
-
-            D20pagetext.setText("yay it worked. Current accel:" + (int) accelCurrentValue);
 
 
             if (accelChangeValue > 12 && ranRecently == false){
@@ -106,7 +103,6 @@ public class D20Fragment extends Fragment {
         rollText20 = (TextView) getView().findViewById(R.id.D20RollText);
         D20static = (ImageView) getView().findViewById(R.id.D20Static);
         D20gif = (GifImageView) getView().findViewById(R.id.D20GIF);
-        D20pagetext = (TextView) getView().findViewById(R.id.D20PageText);
 
         binding.D20ButtonD4.setOnClickListener(new View.OnClickListener() {
             @Override

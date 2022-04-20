@@ -1,5 +1,10 @@
 package com.example.p2g2t222mini_project;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -26,6 +31,54 @@ public class D4Fragment extends Fragment {
     private GifImageView D4gif;
     private ImageView D4static;
 
+    private double accelCurrentValue;
+    private double accelPreviousValue;
+    private boolean ranRecently = false;
+
+    private SensorManager mSensorManager;
+    private Sensor mAccelerometer;
+    private SensorEventListener sensorEventListener = new SensorEventListener() {
+        @Override
+        public void onSensorChanged(SensorEvent sensorEvent) {
+            float x = sensorEvent.values[0];
+            float y = sensorEvent.values[1];
+            float z = sensorEvent.values[2];
+
+            accelCurrentValue = Math.sqrt((x*x + y*y + z*z));
+            double accelChangeValue = Math.abs(accelCurrentValue - accelPreviousValue);
+            accelPreviousValue = accelCurrentValue;
+
+
+            if (accelChangeValue > 12 && ranRecently == false){
+                ranRecently = true;
+                binding.D4RollButton.setEnabled(false);
+                String resetString = " ";
+                rollText4.setText(resetString);
+                D4gif.setVisibility(View.VISIBLE);
+                D4static.setVisibility(View.GONE);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        final int min = 1;
+                        final int max = 4;
+                        final int random1to4 = new Random().nextInt((max - min) +1) +min;
+                        Integer number = random1to4;
+                        rollText4.setText(number.toString());
+                        binding.D4RollButton.setEnabled(true);
+                        D4gif.setVisibility(View.GONE);
+                        D4static.setVisibility(View.VISIBLE);
+                        ranRecently = false;
+                    }
+                },2000); //this is the delay before button is re-activated
+            }
+        }
+
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int i) {
+
+        }
+    };
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -33,6 +86,10 @@ public class D4Fragment extends Fragment {
     ) {
 
         binding = FragmentD4Binding.inflate(inflater, container, false);
+
+        mSensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
+        mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
         return binding.getRoot();
 
     }
@@ -116,6 +173,16 @@ public class D4Fragment extends Fragment {
 
             }
         });
+    }
+
+    public void onResume(){
+        super.onResume();
+        mSensorManager.registerListener(sensorEventListener, mAccelerometer, mSensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    public void onPause(){
+        super.onPause();
+        mSensorManager.unregisterListener(sensorEventListener);
     }
 
     @Override
