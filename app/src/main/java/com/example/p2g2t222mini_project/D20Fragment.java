@@ -1,10 +1,12 @@
 package com.example.p2g2t222mini_project;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -24,6 +26,8 @@ import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 
 import org.w3c.dom.Text;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Random;
 
 import pl.droidsonroids.gif.GifImageView;
@@ -160,6 +164,9 @@ public class D20Fragment extends Fragment {
                 rollText20.setText(resetString);
                 D20gif.setVisibility(View.VISIBLE);
                 D20static.setVisibility(View.GONE);
+                MediaPlayer mediaPlayer = new MediaPlayer();
+                mediaPlayer = MediaPlayer.create(getContext(), R.raw.dice);
+                mediaPlayer.start();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
