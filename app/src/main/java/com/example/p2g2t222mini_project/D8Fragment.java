@@ -1,5 +1,10 @@
 package com.example.p2g2t222mini_project;
 
+import static android.content.Context.SENSOR_SERVICE;
+
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -7,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -33,9 +39,12 @@ public class D8Fragment extends Fragment {
     ) {
 
         binding = FragmentD8Binding.inflate(inflater, container, false);
+
+
         return binding.getRoot();
 
     }
+
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -43,6 +52,7 @@ public class D8Fragment extends Fragment {
         rollText8 = (TextView) getView().findViewById(R.id.D8RollText);
         D8Gif = (GifImageView) getView().findViewById(R.id.D8Gif);
         D8Static = (ImageView) getView().findViewById(R.id.D8StaticDie);
+
 
         binding.D8ButtonD4.setOnClickListener(new View.OnClickListener() {
             @Override

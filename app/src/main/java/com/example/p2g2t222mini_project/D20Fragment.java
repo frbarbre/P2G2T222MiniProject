@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,10 +19,14 @@ import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 
 import java.util.Random;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class D20Fragment extends Fragment {
 
     private FragmentD20Binding binding;
     private TextView rollText20;
+    private ImageView D20static;
+    private GifImageView D20gif;
 
     @Override
     public View onCreateView(
@@ -38,6 +43,8 @@ public class D20Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         rollText20 = (TextView) getView().findViewById(R.id.D20RollText);
+        D20static = (ImageView) getView().findViewById(R.id.D20Static);
+        D20gif = (GifImageView) getView().findViewById(R.id.D20GIF);
 
         binding.D20ButtonD4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +98,10 @@ public class D20Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 binding.D20RollButton.setEnabled(false);
-
+                String resetString = " ";
+                rollText20.setText(resetString);
+                D20gif.setVisibility(View.VISIBLE);
+                D20static.setVisibility(View.GONE);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -101,6 +111,8 @@ public class D20Fragment extends Fragment {
                         Integer number = random1to20;
                         rollText20.setText(number.toString());
                         binding.D20RollButton.setEnabled(true);
+                        D20gif.setVisibility(View.GONE);
+                        D20static.setVisibility(View.VISIBLE);
                     }
                 },2000); //this is the delay before button is re-activated
 
