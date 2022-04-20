@@ -9,6 +9,13 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/D4Fragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Dice"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/diceFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_settings_24"
