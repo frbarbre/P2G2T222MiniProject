@@ -34,6 +34,7 @@ public class D8Fragment extends Fragment {
     private TextView rollText8;
     private GifImageView D8Gif;
     private ImageView D8Static;
+    private MainActivity mainActivity;
 
     private double accelCurrentValue;
     private double accelPreviousValue;
@@ -108,6 +109,24 @@ public class D8Fragment extends Fragment {
         rollText8 = (TextView) getView().findViewById(R.id.D8RollText);
         D8Gif = (GifImageView) getView().findViewById(R.id.D8Gif);
         D8Static = (ImageView) getView().findViewById(R.id.D8StaticDie);
+
+        if(mainActivity.diceColorGreen == true) {
+            D8Static.setImageResource(R.drawable.d8_green1);
+            D8Gif.setImageResource(R.drawable.d8_green);
+            ;
+        }
+
+        if(mainActivity.diceColorRed == true) {
+            D8Static.setImageResource(R.drawable.d8_red1);
+            D8Gif.setImageResource(R.drawable.d8_red);
+            ;
+        }
+
+        if(mainActivity.diceColorBlue == true) {
+            D8Static.setImageResource(R.drawable.d8_blue1);
+            D8Gif.setImageResource(R.drawable.d8_blue);
+            ;
+        }
 
 
         binding.D8ButtonD4.setOnClickListener(new View.OnClickListener() {

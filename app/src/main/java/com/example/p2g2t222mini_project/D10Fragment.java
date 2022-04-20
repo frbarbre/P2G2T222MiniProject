@@ -32,6 +32,7 @@ public class D10Fragment extends Fragment {
     private TextView rollText10;
     private ImageView D10static;
     private GifImageView D10gif;
+    private MainActivity mainActivity;
 
     private double accelCurrentValue;
     private double accelPreviousValue;
@@ -105,6 +106,24 @@ public class D10Fragment extends Fragment {
         rollText10 = (TextView) getView().findViewById(R.id.D10RollText);
         D10static = (ImageView) getView().findViewById(R.id.D10Static);
         D10gif = (GifImageView) getView().findViewById(R.id.D10GIF);
+
+        if(mainActivity.diceColorGreen == true) {
+            D10static.setImageResource(R.drawable.d10_green1);
+            D10gif.setImageResource(R.drawable.d10_green);
+            ;
+        }
+
+        if(mainActivity.diceColorRed == true) {
+            D10static.setImageResource(R.drawable.d10_red1);
+            D10gif.setImageResource(R.drawable.d10_red);
+            ;
+        }
+
+        if(mainActivity.diceColorBlue == true) {
+            D10static.setImageResource(R.drawable.d10_blue1);
+            D10gif.setImageResource(R.drawable.d10_blue);
+            ;
+        }
 
         binding.D10ButtonD4.setOnClickListener(new View.OnClickListener() {
             @Override

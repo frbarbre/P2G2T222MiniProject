@@ -1,5 +1,6 @@
 package com.example.p2g2t222mini_project;
 
+import android.media.Image;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -21,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -85,4 +87,9 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    public static boolean diceColorGreen = false;
+    public static boolean diceColorRed = true;
+    public static boolean diceColorBlue = false;
+
 }

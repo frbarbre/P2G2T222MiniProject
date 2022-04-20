@@ -41,6 +41,7 @@ public class D20Fragment extends Fragment {
     private double accelCurrentValue;
     private double accelPreviousValue;
     private boolean ranRecently = false;
+    private MainActivity mainActivity;
 
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
@@ -110,6 +111,24 @@ public class D20Fragment extends Fragment {
         rollText20 = (TextView) getView().findViewById(R.id.D20RollText);
         D20static = (ImageView) getView().findViewById(R.id.D20Static);
         D20gif = (GifImageView) getView().findViewById(R.id.D20GIF);
+
+        if(mainActivity.diceColorGreen == true) {
+            D20static.setImageResource(R.drawable.d20_green1);
+            D20gif.setImageResource(R.drawable.d20_green);
+            ;
+        }
+
+        if(mainActivity.diceColorRed == true) {
+            D20static.setImageResource(R.drawable.d20_red1);
+            D20gif.setImageResource(R.drawable.d20_red);
+            ;
+        }
+
+        if(mainActivity.diceColorBlue == true) {
+            D20static.setImageResource(R.drawable.d20_blue1);
+            D20gif.setImageResource(R.drawable.d20_blue);
+            ;
+        }
 
         binding.D20ButtonD4.setOnClickListener(new View.OnClickListener() {
             @Override

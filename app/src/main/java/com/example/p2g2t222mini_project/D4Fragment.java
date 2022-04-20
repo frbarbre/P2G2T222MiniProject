@@ -5,6 +5,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -31,7 +32,16 @@ public class D4Fragment extends Fragment {
     private FragmentD4Binding binding;
     private TextView rollText4;
     private GifImageView D4gif;
+//    private GifImageView D8gif;
+//    private GifImageView D10gif;
+//    private GifImageView D12gif;
+//    private GifImageView D20gif;
     private ImageView D4static;
+//    private ImageView D8static;
+//    private ImageView D10static;
+//    private ImageView D12static;
+//    private ImageView D20static;
+    private static MainActivity mainActivity;
 
     private double accelCurrentValue;
     private double accelPreviousValue;
@@ -103,7 +113,25 @@ public class D4Fragment extends Fragment {
 
         rollText4 = (TextView) getView().findViewById(R.id.D4RollText);
         D4gif = (GifImageView) getView().findViewById(R.id.D4GIF);
+
         D4static = (ImageView) getView().findViewById(R.id.D4StaticDie);
+
+
+        if(mainActivity.diceColorGreen == true){
+            D4static.setImageResource(R.drawable.d4_green1);
+            D4gif.setImageResource(R.drawable.d4_green);;
+        }
+
+        if(mainActivity.diceColorRed == true){
+            D4static.setImageResource(R.drawable.d4_red1);
+            D4gif.setImageResource(R.drawable.d4_red);;
+        }
+
+        if(mainActivity.diceColorBlue == true){
+            D4static.setImageResource(R.drawable.d4_blue1);
+            D4gif.setImageResource(R.drawable.d4_blue);;
+        }
+
 
         binding.D4ButtonD10.setOnClickListener(new View.OnClickListener() {
             @Override

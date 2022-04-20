@@ -30,6 +30,7 @@ public class D6Fragment extends Fragment {
     private TextView rollText6;
     private GifImageView D6Gif;
     private ImageView D6Static;
+    private static MainActivity mainActivity;
 
     private double accelCurrentValue;
     private double accelPreviousValue;
@@ -103,6 +104,24 @@ public class D6Fragment extends Fragment {
         rollText6 = (TextView) getView().findViewById(R.id.D6RollText);
         D6Gif = (GifImageView) getView().findViewById(R.id.D6GIF);
         D6Static = (ImageView) getView().findViewById(R.id.D6Static);
+
+        if(mainActivity.diceColorGreen == true) {
+            D6Static.setImageResource(R.drawable.d6_green1);
+            D6Gif.setImageResource(R.drawable.d6_green);
+            ;
+        }
+
+        if(mainActivity.diceColorRed == true) {
+            D6Static.setImageResource(R.drawable.d6_red1);
+            D6Gif.setImageResource(R.drawable.d6_red);
+            ;
+        }
+
+        if(mainActivity.diceColorBlue == true) {
+            D6Static.setImageResource(R.drawable.d6_blue1);
+            D6Gif.setImageResource(R.drawable.d6_blue);
+            ;
+        }
 
         binding.D6ButtonD8.setOnClickListener(new View.OnClickListener() {
             @Override
