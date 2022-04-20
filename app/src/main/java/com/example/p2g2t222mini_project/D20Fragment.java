@@ -60,6 +60,13 @@ public class D20Fragment extends Fragment {
             if (accelChangeValue > 12 && ranRecently == false){
                 ranRecently = true;
                 binding.D20RollButton.setEnabled(false);
+                binding.D20ButtonD4.setEnabled(false);
+                binding.D20ButtonD6.setEnabled(false);
+                binding.D20ButtonD8.setEnabled(false);
+                binding.D20ButtonD10.setEnabled(false);
+                binding.D20ButtonD10.setEnabled(false);
+                binding.D20ButtonD12.setEnabled(false);
+                binding.D20ButtonD100.setEnabled(false);
                 String resetString = " ";
                 rollText20.setText(resetString);
                 D20gif.setVisibility(View.VISIBLE);
@@ -76,6 +83,13 @@ public class D20Fragment extends Fragment {
                         Integer number = random1to20;
                         rollText20.setText(number.toString());
                         binding.D20RollButton.setEnabled(true);
+                        binding.D20RollButton.setEnabled(true);
+                        binding.D20ButtonD4.setEnabled(true);
+                        binding.D20ButtonD6.setEnabled(true);
+                        binding.D20ButtonD8.setEnabled(true);
+                        binding.D20ButtonD10.setEnabled(true);
+                        binding.D20ButtonD12.setEnabled(true);
+                        binding.D20ButtonD100.setEnabled(true);
                         D20gif.setVisibility(View.GONE);
                         D20static.setVisibility(View.VISIBLE);
                         ranRecently = false;
@@ -182,6 +196,13 @@ public class D20Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 binding.D20RollButton.setEnabled(false);
+                binding.D20ButtonD4.setEnabled(false);
+                binding.D20ButtonD6.setEnabled(false);
+                binding.D20ButtonD8.setEnabled(false);
+                binding.D20ButtonD10.setEnabled(false);
+                binding.D20ButtonD10.setEnabled(false);
+                binding.D20ButtonD12.setEnabled(false);
+                binding.D20ButtonD100.setEnabled(false);
                 String resetString = " ";
                 rollText20.setText(resetString);
                 D20gif.setVisibility(View.VISIBLE);
@@ -198,6 +219,12 @@ public class D20Fragment extends Fragment {
                         Integer number = random1to20;
                         rollText20.setText(number.toString());
                         binding.D20RollButton.setEnabled(true);
+                        binding.D20ButtonD4.setEnabled(true);
+                        binding.D20ButtonD6.setEnabled(true);
+                        binding.D20ButtonD8.setEnabled(true);
+                        binding.D20ButtonD10.setEnabled(true);
+                        binding.D20ButtonD12.setEnabled(true);
+                        binding.D20ButtonD100.setEnabled(true);
                         D20gif.setVisibility(View.GONE);
                         D20static.setVisibility(View.VISIBLE);
                     }
