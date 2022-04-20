@@ -3,14 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/Git Projects/P2G2T2 Mini Project/app/src/main/res/layout/fragment_d10.xml" value="0.32065217391304346" />
+        <entry key="..\:/AndroidStudioProjects/Git Projects/P2G2T2 Mini Project/app/src/main/res/layout/fragment_d6.xml" value="0.32065217391304346" />
+        <entry key="..\:/AndroidStudioProjects/Git Projects/P2G2T2 Mini Project/app/src/main/res/layout/fragment_d8.xml" value="0.32065217391304346" />
         <entry key="..\:/Users/frbar/AndroidStudioProjects/P2G2T222MiniProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3105" />
         <entry key="..\:/Users/frbar/AndroidStudioProjects/P2G2T222MiniProject/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/frbar/AndroidStudioProjects/P2G2T222MiniProject/app/src/main/res/layout/fragment_d10.xml" value="0.33" />
-        <entry key="..\:/Users/frbar/AndroidStudioProjects/P2G2T222MiniProject/app/src/main/res/layout/fragment_d12.xml" value="0.33" />
-        <entry key="..\:/Users/frbar/AndroidStudioProjects/P2G2T222MiniProject/app/src/main/res/layout/fragment_d20.xml" value="0.33" />
-        <entry key="..\:/Users/frbar/AndroidStudioProjects/P2G2T222MiniProject/app/src/main/res/layout/fragment_d4.xml" value="1.2170385395537526" />
+        <entry key="..\:/Users/frbar/AndroidStudioProjects/P2G2T222MiniProject/app/src/main/res/layout/fragment_d10.xml" value="0.55" />
+        <entry key="..\:/Users/frbar/AndroidStudioProjects/P2G2T222MiniProject/app/src/main/res/layout/fragment_d12.xml" value="0.3125" />
+        <entry key="..\:/Users/frbar/AndroidStudioProjects/P2G2T222MiniProject/app/src/main/res/layout/fragment_d4.xml" value="1.0" />
         <entry key="..\:/Users/frbar/AndroidStudioProjects/P2G2T222MiniProject/app/src/main/res/layout/fragment_d6.xml" value="0.25" />
-        <entry key="..\:/Users/frbar/AndroidStudioProjects/P2G2T222MiniProject/app/src/main/res/layout/fragment_d8.xml" value="0.25" />
+        <entry key="..\:/Users/frbar/AndroidStudioProjects/P2G2T222MiniProject/app/src/main/res/layout/fragment_d8.xml" value="0.44018340975406417" />
         <entry key="..\:/Users/frbar/AndroidStudioProjects/P2G2T222MiniProject/app/src/main/res/layout/fragment_first.xml" value="0.3109375" />
       </map>
     </option>

@@ -12,7 +12,7 @@
         android:background="@color/darkgreybackground">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/D8PageText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="D8 page"
@@ -94,15 +94,27 @@
             app:layout_constraintVertical_bias="0.816" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/gifImageView2"
+            android:id="@+id/D8Gif"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/d8_red"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/D8RollButon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/D8PageText" />
+
+        <ImageView
+            android:id="@+id/D8StaticDie"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/d8_red1"
+            app:layout_constraintBottom_toTopOf="@+id/D8RollButon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/D8PageText" />
 
         <TextView
             android:id="@+id/D8RollText"
@@ -111,10 +123,10 @@
             android:textColor="@color/white"
             android:textSize="35sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/gifImageView2"
-            app:layout_constraintEnd_toEndOf="@+id/gifImageView2"
-            app:layout_constraintStart_toStartOf="@+id/gifImageView2"
-            app:layout_constraintTop_toTopOf="@+id/gifImageView2"
+            app:layout_constraintBottom_toBottomOf="@+id/D8Gif"
+            app:layout_constraintEnd_toEndOf="@+id/D8Gif"
+            app:layout_constraintStart_toStartOf="@+id/D8Gif"
+            app:layout_constraintTop_toTopOf="@+id/D8Gif"
             app:layout_constraintVertical_bias="0.473" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
