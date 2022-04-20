@@ -16,16 +16,7 @@
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/Theme.P2G2T222MiniProject.AppBarOverlay">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:popupTheme="@style/Theme.P2G2T222MiniProject.PopupOverlay" />
-
-        </com.google.android.material.appbar.AppBarLayout>
+            android:theme="@style/Theme.P2G2T222MiniProject.AppBarOverlay"/>
 
 
         <include
@@ -35,6 +26,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="307dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appBarLayout"
+            app:layout_constraintVertical_bias="0.018"
+            app:srcCompat="@drawable/LogoRed" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
