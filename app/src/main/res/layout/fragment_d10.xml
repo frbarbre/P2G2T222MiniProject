@@ -80,6 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Roll"
+        app:backgroundTint="@color/redbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -113,17 +114,18 @@
         app:layout_constraintVertical_bias="0.594" />
 
     <TextView
-         android:id="@+id/D10RollText"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:textColor="@color/white"
-         android:textSize="35sp"
-         android:textStyle="bold"
-         app:layout_constraintBottom_toBottomOf="@+id/D10GIF"
-         app:layout_constraintEnd_toEndOf="@+id/D10GIF"
-         app:layout_constraintStart_toStartOf="@+id/D10GIF"
-         app:layout_constraintTop_toTopOf="@+id/D10GIF"
-         app:layout_constraintVertical_bias="0.45" />
+        android:id="@+id/D10RollText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/D10Static"
+        app:layout_constraintEnd_toEndOf="@+id/D10Static"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/D10Static"
+        app:layout_constraintTop_toTopOf="@+id/D10Static"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

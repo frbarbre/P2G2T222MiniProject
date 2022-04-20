@@ -87,6 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Roll"
+            app:backgroundTint="@color/redbutton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -126,13 +127,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:textSize="35sp"
+            android:textSize="25sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/D20GIF"
-            app:layout_constraintEnd_toEndOf="@+id/D20GIF"
-            app:layout_constraintStart_toStartOf="@+id/D20GIF"
-            app:layout_constraintTop_toTopOf="@+id/D20GIF"
-            app:layout_constraintVertical_bias="0.48" />
+            app:layout_constraintBottom_toBottomOf="@+id/D20Static"
+            app:layout_constraintEnd_toEndOf="@+id/D20Static"
+            app:layout_constraintStart_toStartOf="@+id/D20Static"
+            app:layout_constraintTop_toTopOf="@+id/D20Static" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

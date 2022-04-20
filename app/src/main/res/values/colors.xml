@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="darkgreybackground">#141414</color>
     <color name="opaqueBackground">#00FFFFFF</color>
+    <color name="greeenbutton">#FF73C043</color>
+    <color name="bluebutton">#FF4998CD</color>
+    <color name="redbutton">#FF972520</color>
 </resources>
