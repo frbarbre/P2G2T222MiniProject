@@ -5,6 +5,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -56,6 +57,9 @@ public class D4Fragment extends Fragment {
                 rollText4.setText(resetString);
                 D4gif.setVisibility(View.VISIBLE);
                 D4static.setVisibility(View.GONE);
+                MediaPlayer mediaPlayer = new MediaPlayer();
+                mediaPlayer = MediaPlayer.create(getContext(), R.raw.dice);
+                mediaPlayer.start();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -157,6 +161,9 @@ public class D4Fragment extends Fragment {
                 rollText4.setText(resetString);
                 D4gif.setVisibility(View.VISIBLE);
                 D4static.setVisibility(View.GONE);
+                MediaPlayer mediaPlayer = new MediaPlayer();
+                mediaPlayer = MediaPlayer.create(getContext(), R.raw.dice);
+                mediaPlayer.start();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {

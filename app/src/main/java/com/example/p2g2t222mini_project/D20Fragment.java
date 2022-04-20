@@ -63,6 +63,9 @@ public class D20Fragment extends Fragment {
                 rollText20.setText(resetString);
                 D20gif.setVisibility(View.VISIBLE);
                 D20static.setVisibility(View.GONE);
+                MediaPlayer mediaPlayer = new MediaPlayer();
+                mediaPlayer = MediaPlayer.create(getContext(), R.raw.dice);
+                mediaPlayer.start();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
