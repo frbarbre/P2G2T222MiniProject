@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,10 +16,14 @@ import com.example.p2g2t222mini_project.databinding.FragmentD6Binding;
 
 import java.util.Random;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class D6Fragment extends Fragment {
 
     private FragmentD6Binding binding;
     private TextView rollText6;
+    private GifImageView D6Gif;
+    private ImageView D6Static;
 
     @Override
     public View onCreateView(
@@ -35,6 +40,8 @@ public class D6Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         rollText6 = (TextView) getView().findViewById(R.id.D6RollText);
+        D6Gif = (GifImageView) getView().findViewById(R.id.D6GIF);
+        D6Static = (ImageView) getView().findViewById(R.id.D6Static);
 
         binding.D6ButtonD8.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +95,10 @@ public class D6Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 binding.D6RollButton.setEnabled(false);
-
+                String resetString = " ";
+                rollText6.setText(resetString);
+                D6Gif.setVisibility(View.VISIBLE);
+                D6Static.setVisibility(View.GONE);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -98,6 +108,8 @@ public class D6Fragment extends Fragment {
                         Integer number = random1to6;
                         rollText6.setText(number.toString());
                         binding.D6RollButton.setEnabled(true);
+                        D6Gif.setVisibility(View.GONE);
+                        D6Static.setVisibility(View.VISIBLE);
                     }
                 },2000); //this is the delay before button is re-activated
 
