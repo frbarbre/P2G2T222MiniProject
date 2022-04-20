@@ -2,6 +2,7 @@ package com.example.p2g2t222mini_project;
 
 import android.os.Bundle;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,6 +44,16 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+        //initializing bottom nav view
+        BottomNavigationView navView = findViewById(R.id.bottom_nav_view);
+        //Passing the IDs of bottom nav destinations
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.historyFragment, R.id.D4Fragment,R.id.diceFragment).build();
+        //Initializing nav controller
+        NavController navController1 = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        NavigationUI.setupActionBarWithNavController(this, navController1,  appBarConfiguration);
+        NavigationUI.setupWithNavController(navView, navController1);
+
 
     }
 

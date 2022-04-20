@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -76,7 +77,6 @@ public class D4Fragment extends Fragment {
                 },2000); //this is the delay before button is re-activated
             }
         }
-
         @Override
         public void onAccuracyChanged(Sensor sensor, int i) {
 
