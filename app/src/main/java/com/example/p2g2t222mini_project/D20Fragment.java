@@ -23,6 +23,7 @@ import com.example.p2g2t222mini_project.databinding.FragmentD12Binding;
 import com.example.p2g2t222mini_project.databinding.FragmentD20Binding;
 import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.w3c.dom.Text;
 
@@ -67,6 +68,8 @@ public class D20Fragment extends Fragment {
                 binding.D20ButtonD10.setEnabled(false);
                 binding.D20ButtonD12.setEnabled(false);
                 binding.D20ButtonD100.setEnabled(false);
+                BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
+                bNavView.setVisibility(View.GONE);
                 String resetString = " ";
                 rollText20.setText(resetString);
                 D20gif.setVisibility(View.VISIBLE);
@@ -90,8 +93,10 @@ public class D20Fragment extends Fragment {
                         binding.D20ButtonD10.setEnabled(true);
                         binding.D20ButtonD12.setEnabled(true);
                         binding.D20ButtonD100.setEnabled(true);
+//                        mainActivity.enableBottomNav();
                         D20gif.setVisibility(View.GONE);
                         D20static.setVisibility(View.VISIBLE);
+                        bNavView.setVisibility(View.VISIBLE);
                         ranRecently = false;
                     }
                 },2000); //this is the delay before button is re-activated
@@ -200,9 +205,10 @@ public class D20Fragment extends Fragment {
                 binding.D20ButtonD6.setEnabled(false);
                 binding.D20ButtonD8.setEnabled(false);
                 binding.D20ButtonD10.setEnabled(false);
-                binding.D20ButtonD10.setEnabled(false);
                 binding.D20ButtonD12.setEnabled(false);
                 binding.D20ButtonD100.setEnabled(false);
+                BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
+                bNavView.setVisibility(View.GONE);
                 String resetString = " ";
                 rollText20.setText(resetString);
                 D20gif.setVisibility(View.VISIBLE);
@@ -227,6 +233,7 @@ public class D20Fragment extends Fragment {
                         binding.D20ButtonD100.setEnabled(true);
                         D20gif.setVisibility(View.GONE);
                         D20static.setVisibility(View.VISIBLE);
+                        bNavView.setVisibility(View.VISIBLE);
                     }
                 },2000); //this is the delay before button is re-activated
 

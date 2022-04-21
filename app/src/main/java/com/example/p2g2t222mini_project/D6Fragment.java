@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.p2g2t222mini_project.databinding.FragmentD6Binding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Random;
 
@@ -53,6 +54,14 @@ public class D6Fragment extends Fragment {
             if (accelChangeValue > 12 && ranRecently == false){
                 ranRecently = true;
                 binding.D6RollButton.setEnabled(false);
+                binding.D6ButtonD4.setEnabled(false);
+                binding.D6ButtonD8.setEnabled(false);
+                binding.D6ButtonD10.setEnabled(false);
+                binding.D6ButtonD12.setEnabled(false);
+                binding.D6ButtonD20.setEnabled(false);
+                binding.D6ButtonD100.setEnabled(false);
+                BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
+                bNavView.setVisibility(View.GONE);
                 String resetString = " ";
                 rollText6.setText(resetString);
                 D6Gif.setVisibility(View.VISIBLE);
@@ -69,8 +78,15 @@ public class D6Fragment extends Fragment {
                         Integer number = random1to6;
                         rollText6.setText(number.toString());
                         binding.D6RollButton.setEnabled(true);
+                        binding.D6ButtonD4.setEnabled(true);
+                        binding.D6ButtonD8.setEnabled(true);
+                        binding.D6ButtonD10.setEnabled(true);
+                        binding.D6ButtonD12.setEnabled(true);
+                        binding.D6ButtonD20.setEnabled(true);
+                        binding.D6ButtonD100.setEnabled(true);
                         D6Gif.setVisibility(View.GONE);
                         D6Static.setVisibility(View.VISIBLE);
+                        bNavView.setVisibility(View.VISIBLE);
                         ranRecently = false;
                     }
                 },2000); //this is the delay before button is re-activated
@@ -175,6 +191,14 @@ public class D6Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 binding.D6RollButton.setEnabled(false);
+                binding.D6ButtonD4.setEnabled(false);
+                binding.D6ButtonD8.setEnabled(false);
+                binding.D6ButtonD10.setEnabled(false);
+                binding.D6ButtonD12.setEnabled(false);
+                binding.D6ButtonD20.setEnabled(false);
+                binding.D6ButtonD100.setEnabled(false);
+                BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
+                bNavView.setVisibility(View.GONE);
                 String resetString = " ";
                 rollText6.setText(resetString);
                 D6Gif.setVisibility(View.VISIBLE);
@@ -191,8 +215,15 @@ public class D6Fragment extends Fragment {
                         Integer number = random1to6;
                         rollText6.setText(number.toString());
                         binding.D6RollButton.setEnabled(true);
+                        binding.D6ButtonD4.setEnabled(true);
+                        binding.D6ButtonD8.setEnabled(true);
+                        binding.D6ButtonD10.setEnabled(true);
+                        binding.D6ButtonD12.setEnabled(true);
+                        binding.D6ButtonD20.setEnabled(true);
+                        binding.D6ButtonD100.setEnabled(true);
                         D6Gif.setVisibility(View.GONE);
                         D6Static.setVisibility(View.VISIBLE);
+                        bNavView.setVisibility(View.VISIBLE);
                     }
                 },2000); //this is the delay before button is re-activated
 

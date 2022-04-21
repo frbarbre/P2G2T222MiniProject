@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,5 +92,6 @@ public class MainActivity extends AppCompatActivity {
     public static boolean diceColorGreen = false;
     public static boolean diceColorRed = true;
     public static boolean diceColorBlue = false;
+
 
 }

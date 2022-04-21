@@ -22,6 +22,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Random;
 
@@ -64,6 +65,14 @@ public class D4Fragment extends Fragment {
             if (accelChangeValue > 12 && ranRecently == false){
                 ranRecently = true;
                 binding.D4RollButton.setEnabled(false);
+                binding.D4ButtonD6.setEnabled(false);
+                binding.D4ButtonD8.setEnabled(false);
+                binding.D4ButtonD10.setEnabled(false);
+                binding.D4ButtonD12.setEnabled(false);
+                binding.D4ButtonD20.setEnabled(false);
+                binding.D4ButtonD100.setEnabled(false);
+                BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
+                bNavView.setVisibility(View.GONE);
                 String resetString = " ";
                 rollText4.setText(resetString);
                 D4gif.setVisibility(View.VISIBLE);
@@ -80,8 +89,15 @@ public class D4Fragment extends Fragment {
                         Integer number = random1to4;
                         rollText4.setText(number.toString());
                         binding.D4RollButton.setEnabled(true);
+                        binding.D4ButtonD6.setEnabled(true);
+                        binding.D4ButtonD8.setEnabled(true);
+                        binding.D4ButtonD10.setEnabled(true);
+                        binding.D4ButtonD12.setEnabled(true);
+                        binding.D4ButtonD20.setEnabled(true);
+                        binding.D4ButtonD100.setEnabled(true);
                         D4gif.setVisibility(View.GONE);
                         D4static.setVisibility(View.VISIBLE);
+                        bNavView.setVisibility(View.VISIBLE);
                         ranRecently = false;
                     }
                 },2000); //this is the delay before button is re-activated
@@ -185,6 +201,14 @@ public class D4Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 binding.D4RollButton.setEnabled(false);
+                binding.D4ButtonD6.setEnabled(false);
+                binding.D4ButtonD8.setEnabled(false);
+                binding.D4ButtonD10.setEnabled(false);
+                binding.D4ButtonD12.setEnabled(false);
+                binding.D4ButtonD20.setEnabled(false);
+                binding.D4ButtonD100.setEnabled(false);
+                BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
+                bNavView.setVisibility(View.GONE);
                 String resetString = " ";
                 rollText4.setText(resetString);
                 D4gif.setVisibility(View.VISIBLE);
@@ -201,8 +225,15 @@ public class D4Fragment extends Fragment {
                         Integer number = random1to4;
                         rollText4.setText(number.toString());
                         binding.D4RollButton.setEnabled(true);
+                        binding.D4ButtonD6.setEnabled(true);
+                        binding.D4ButtonD8.setEnabled(true);
+                        binding.D4ButtonD10.setEnabled(true);
+                        binding.D4ButtonD12.setEnabled(true);
+                        binding.D4ButtonD20.setEnabled(true);
+                        binding.D4ButtonD100.setEnabled(true);
                         D4gif.setVisibility(View.GONE);
                         D4static.setVisibility(View.VISIBLE);
+                        bNavView.setVisibility(View.VISIBLE);
                     }
                 },2000); //this is the delay before button is re-activated
 

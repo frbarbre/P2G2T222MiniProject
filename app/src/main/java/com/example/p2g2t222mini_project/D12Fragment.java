@@ -21,6 +21,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.p2g2t222mini_project.databinding.FragmentD12Binding;
 import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Random;
 
@@ -55,6 +56,14 @@ public class D12Fragment extends Fragment {
             if (accelChangeValue > 12 && ranRecently == false){
                 ranRecently = true;
                 binding.D12RollButton.setEnabled(false);
+                binding.D12ButtonD4.setEnabled(false);
+                binding.D12ButtonD6.setEnabled(false);
+                binding.D12ButtonD8.setEnabled(false);
+                binding.D12ButtonD10.setEnabled(false);
+                binding.D12ButtonD20.setEnabled(false);
+                binding.D12ButtonD100.setEnabled(false);
+                BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
+                bNavView.setVisibility(View.GONE);
                 String resetString = " ";
                 rollText12.setText(resetString);
                 D12gif.setVisibility(View.VISIBLE);
@@ -71,8 +80,16 @@ public class D12Fragment extends Fragment {
                         Integer number = random1to12;
                         rollText12.setText(number.toString());
                         binding.D12RollButton.setEnabled(true);
+                        binding.D12RollButton.setEnabled(true);
+                        binding.D12ButtonD4.setEnabled(true);
+                        binding.D12ButtonD6.setEnabled(true);
+                        binding.D12ButtonD8.setEnabled(true);
+                        binding.D12ButtonD10.setEnabled(true);
+                        binding.D12ButtonD20.setEnabled(true);
+                        binding.D12ButtonD100.setEnabled(true);
                         D12gif.setVisibility(View.GONE);
                         D12static.setVisibility(View.VISIBLE);
+                        bNavView.setVisibility(View.VISIBLE);
                         ranRecently = false;
                     }
                 },2000); //this is the delay before button is re-activated
@@ -178,6 +195,14 @@ public class D12Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 binding.D12RollButton.setEnabled(false);
+                binding.D12ButtonD4.setEnabled(false);
+                binding.D12ButtonD6.setEnabled(false);
+                binding.D12ButtonD8.setEnabled(false);
+                binding.D12ButtonD10.setEnabled(false);
+                binding.D12ButtonD20.setEnabled(false);
+                binding.D12ButtonD100.setEnabled(false);
+                BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
+                bNavView.setVisibility(View.GONE);
                 String resetString = " ";
                 rollText12.setText(resetString);
                 D12gif.setVisibility(View.VISIBLE);
@@ -194,8 +219,16 @@ public class D12Fragment extends Fragment {
                         Integer number = random1to12;
                         rollText12.setText(number.toString());
                         binding.D12RollButton.setEnabled(true);
+                        binding.D12RollButton.setEnabled(true);
+                        binding.D12ButtonD4.setEnabled(true);
+                        binding.D12ButtonD6.setEnabled(true);
+                        binding.D12ButtonD8.setEnabled(true);
+                        binding.D12ButtonD10.setEnabled(true);
+                        binding.D12ButtonD20.setEnabled(true);
+                        binding.D12ButtonD100.setEnabled(true);
                         D12gif.setVisibility(View.GONE);
                         D12static.setVisibility(View.VISIBLE);
+                        bNavView.setVisibility(View.VISIBLE);
                     }
                 },2000); //this is the delay before button is re-activated
 
