@@ -40,6 +40,11 @@ public class D4Fragment extends Fragment {
     private GifImageView D4gif;
     private Button D4butD6;
     private Button D4butD8;
+    private Button D4butD10;
+    private Button D4butD12;
+    private Button D4butD20;
+    private Button D4butD100;
+    private Button D4rollBut;
 
     private ImageView D4static;
 
@@ -132,6 +137,12 @@ public class D4Fragment extends Fragment {
         D4gif = (GifImageView) getView().findViewById(R.id.D4GIF);
         D4butD6 = (Button) getView().findViewById(R.id.D4ButtonD6);
         D4butD8 = (Button) getView().findViewById(R.id.D4ButtonD8);
+        D4butD10 = (Button) getView().findViewById(R.id.D4ButtonD10);
+        D4butD12 = (Button) getView().findViewById(R.id.D4ButtonD12);
+        D4butD20 = (Button) getView().findViewById(R.id.D4ButtonD20);
+        D4butD100 = (Button) getView().findViewById(R.id.D4ButtonD100);
+        D4rollBut = (Button) getView().findViewById(R.id.D4RollButton);
+
 
 
         D4static = (ImageView) getView().findViewById(R.id.D4StaticDie);
@@ -142,16 +153,35 @@ public class D4Fragment extends Fragment {
             D4gif.setImageResource(R.drawable.d4_green);
             D4butD6.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
             D4butD8.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D4butD10.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D4butD12.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D4butD20.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D4butD100.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D4rollBut.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
         }
 
         if(mainActivity.diceColorRed == true){
             D4static.setImageResource(R.drawable.d4_red1);
-            D4gif.setImageResource(R.drawable.d4_red);;
+            D4gif.setImageResource(R.drawable.d4_red);
+            D4butD6.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D4butD8.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D4butD10.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D4butD12.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D4butD20.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D4butD100.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D4rollBut.setBackgroundColor(getResources().getColor(R.color.redbutton));
         }
 
         if(mainActivity.diceColorBlue == true){
             D4static.setImageResource(R.drawable.d4_blue1);
-            D4gif.setImageResource(R.drawable.d4_blue);;
+            D4gif.setImageResource(R.drawable.d4_blue);
+            D4butD6.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D4butD8.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D4butD10.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D4butD12.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D4butD20.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D4butD100.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D4rollBut.setBackgroundColor(getResources().getColor(R.color.bluebutton));
         }
 
         binding.D4ButtonD10.setOnClickListener(new View.OnClickListener() {

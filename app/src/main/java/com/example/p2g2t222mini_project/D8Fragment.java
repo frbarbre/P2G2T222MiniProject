@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +35,14 @@ public class D8Fragment extends Fragment {
     private FragmentD8Binding binding;
     private TextView rollText8;
     private GifImageView D8Gif;
+    private Button D8butD6;
+    private Button D8butD4;
+    private Button D8butD10;
+    private Button D8butD12;
+    private Button D8butD20;
+    private Button D8butD100;
+    private Button D8rollBut;
+
     private ImageView D8Static;
     private MainActivity mainActivity;
 
@@ -57,7 +66,7 @@ public class D8Fragment extends Fragment {
 
             if (accelChangeValue > 12 && ranRecently == false){
                 ranRecently = true;
-                binding.D8RollButon.setEnabled(false);
+                binding.D8RollButton.setEnabled(false);
                 binding.D8ButtonD4.setEnabled(false);
                 binding.D8ButtonD6.setEnabled(false);
                 binding.D8ButtonD10.setEnabled(false);
@@ -81,7 +90,7 @@ public class D8Fragment extends Fragment {
                         final int random1to8 = new Random().nextInt((max - min) +1) +min;
                         Integer number = random1to8;
                         rollText8.setText(number.toString());
-                        binding.D8RollButon.setEnabled(true);
+                        binding.D8RollButton.setEnabled(true);
                         binding.D8ButtonD4.setEnabled(true);
                         binding.D8ButtonD6.setEnabled(true);
                         binding.D8ButtonD10.setEnabled(true);
@@ -125,23 +134,48 @@ public class D8Fragment extends Fragment {
         rollText8 = (TextView) getView().findViewById(R.id.D8RollText);
         D8Gif = (GifImageView) getView().findViewById(R.id.D8Gif);
         D8Static = (ImageView) getView().findViewById(R.id.D8StaticDie);
+        D8butD6 = (Button) getView().findViewById(R.id.D8ButtonD6);
+        D8butD4 = (Button) getView().findViewById(R.id.D8ButtonD4);
+        D8butD10 = (Button) getView().findViewById(R.id.D8ButtonD10);
+        D8butD12 = (Button) getView().findViewById(R.id.D8ButtonD12);
+        D8butD20 = (Button) getView().findViewById(R.id.D8ButtonD20);
+        D8butD100 = (Button) getView().findViewById(R.id.D8ButtonD100);
+        D8rollBut = (Button) getView().findViewById(R.id.D8RollButton);
 
         if(mainActivity.diceColorGreen == true) {
             D8Static.setImageResource(R.drawable.d8_green1);
             D8Gif.setImageResource(R.drawable.d8_green);
-            ;
+            D8butD6.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D8butD4.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D8butD10.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D8butD12.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D8butD20.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D8butD100.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D8rollBut.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
         }
 
         if(mainActivity.diceColorRed == true) {
             D8Static.setImageResource(R.drawable.d8_red1);
             D8Gif.setImageResource(R.drawable.d8_red);
-            ;
+            D8butD6.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D8butD4.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D8butD10.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D8butD12.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D8butD20.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D8butD100.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D8rollBut.setBackgroundColor(getResources().getColor(R.color.redbutton));
         }
 
         if(mainActivity.diceColorBlue == true) {
             D8Static.setImageResource(R.drawable.d8_blue1);
             D8Gif.setImageResource(R.drawable.d8_blue);
-            ;
+            D8butD6.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D8butD4.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D8butD10.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D8butD12.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D8butD20.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D8butD100.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D8rollBut.setBackgroundColor(getResources().getColor(R.color.bluebutton));
         }
 
 
@@ -193,10 +227,10 @@ public class D8Fragment extends Fragment {
             }
         });
 
-        binding.D8RollButon.setOnClickListener(new View.OnClickListener() {
+        binding.D8RollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                binding.D8RollButon.setEnabled(false);
+                binding.D8RollButton.setEnabled(false);
                 binding.D8ButtonD4.setEnabled(false);
                 binding.D8ButtonD6.setEnabled(false);
                 binding.D8ButtonD10.setEnabled(false);
@@ -220,8 +254,8 @@ public class D8Fragment extends Fragment {
                         final int random1to8 = new Random().nextInt((max - min) +1) +min;
                         Integer number = random1to8;
                         rollText8.setText(number.toString());
-                        binding.D8RollButon.setEnabled(true);
-                        binding.D8RollButon.setEnabled(true);
+                        binding.D8RollButton.setEnabled(true);
+                        binding.D8RollButton.setEnabled(true);
                         binding.D8ButtonD4.setEnabled(true);
                         binding.D8ButtonD6.setEnabled(true);
                         binding.D8ButtonD10.setEnabled(true);
