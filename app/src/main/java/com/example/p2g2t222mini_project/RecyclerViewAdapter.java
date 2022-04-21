@@ -37,8 +37,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.titleText.setText(historyList.get(position).getDiceName());
-        holder.subTitleText.setText(historyList.get(position).getRollAmount());
+        holder.titleText.setText("Die used: " +historyList.get(position).getDiceName());
+        holder.subTitleText.setText(String.valueOf("Roll amount: " +historyList.get(position).getRollAmount()));
         Glide.with(context).load(historyList.get(position).getDiceImage()).into(holder.listImage);
 
 

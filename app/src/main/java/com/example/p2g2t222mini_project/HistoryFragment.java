@@ -50,10 +50,12 @@ public class HistoryFragment extends Fragment {
         recyclerView = view.findViewById(R.id.HistoryRecycler);
         recyclerView.setHasFixedSize(true);
         mAdapter = new RecyclerViewAdapter(historyList, getContext());
-        Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d20_red);
+        Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d20_red1);
         RollHistoryItem r0 = new RollHistoryItem(0,"D20", 6, diceImage);
         historyList.add(r0);
         recyclerView.setAdapter(mAdapter);
+
+        layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
         return view;
