@@ -41,6 +41,7 @@ public class D100Fragment extends Fragment {
     private Button D100butD4;
     private Button D100butD20;
     private Button D100rollBut;
+    private ImageView Logo;
 
     private double accelCurrentValue;
     private double accelPreviousValue;
@@ -145,8 +146,10 @@ public class D100Fragment extends Fragment {
         D100butD4 = (Button) getView().findViewById(R.id.D100ButtonD4);
         D100butD20 = (Button) getView().findViewById(R.id.D100ButtonD20);
         D100rollBut = (Button) getView().findViewById(R.id.D100RollButton);
+        Logo = (ImageView) getView().findViewById(R.id.LogoD100);
 
         if(mainActivity.diceColorGreen == true) {
+            Logo.setImageResource(R.drawable.logogreen);
             D100static1.setImageResource(R.drawable.d10_green1);
             D100static2.setImageResource(R.drawable.d10_green1);
             D100gif1.setImageResource(R.drawable.d10_green);
@@ -161,6 +164,7 @@ public class D100Fragment extends Fragment {
         }
 
         if(mainActivity.diceColorRed == true) {
+            Logo.setImageResource(R.drawable.logored);
             D100static1.setImageResource(R.drawable.d10_red1);
             D100static2.setImageResource(R.drawable.d10_red1);
             D100gif1.setImageResource(R.drawable.d10_red);
@@ -175,6 +179,7 @@ public class D100Fragment extends Fragment {
         }
 
         if(mainActivity.diceColorBlue == true) {
+            Logo.setImageResource(R.drawable.logoblue);
             D100static1.setImageResource(R.drawable.d10_blue1);
             D100static2.setImageResource(R.drawable.d10_blue1);
             D100gif1.setImageResource(R.drawable.d10_blue);

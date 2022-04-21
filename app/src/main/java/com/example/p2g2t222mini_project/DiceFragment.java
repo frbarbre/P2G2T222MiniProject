@@ -1,35 +1,23 @@
 package com.example.p2g2t222mini_project;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import android.media.Image;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.p2g2t222mini_project.databinding.FragmentDiceBinding;
-
-import java.util.Random;
-
-import pl.droidsonroids.gif.GifImageView;
 
 
 public class DiceFragment extends Fragment {
 
+    private ImageView LogoRed;
+    private ImageView LogoGreen;
+    private ImageView LogoBlue;
 
     private FragmentDiceBinding binding;
     private static MainActivity mainActivity;
@@ -50,6 +38,27 @@ public class DiceFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        LogoRed = (ImageView) getView().findViewById(R.id.LogoDiceRed);
+        LogoGreen = (ImageView) getView().findViewById(R.id.LogoDiceGreen);
+        LogoBlue = (ImageView) getView().findViewById(R.id.LogoDiceBlue);
+
+        if(mainActivity.diceColorGreen == true) {
+            LogoRed.setVisibility(View.GONE);
+            LogoGreen.setVisibility(View.VISIBLE);
+            LogoBlue.setVisibility(View.GONE);
+        }
+
+        if(mainActivity.diceColorRed == true) {
+            LogoRed.setVisibility(View.VISIBLE);
+            LogoGreen.setVisibility(View.GONE);
+            LogoBlue.setVisibility(View.GONE);
+        }
+
+        if(mainActivity.diceColorBlue == true) {
+            LogoRed.setVisibility(View.GONE);
+            LogoGreen.setVisibility(View.GONE);
+            LogoBlue.setVisibility(View.VISIBLE);
+        }
 
         binding.DiceGreenButton.setOnClickListener(new View.OnClickListener() {
             @Override

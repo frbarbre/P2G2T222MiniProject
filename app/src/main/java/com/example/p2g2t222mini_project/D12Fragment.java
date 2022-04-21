@@ -5,6 +5,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -41,6 +42,7 @@ public class D12Fragment extends Fragment {
     private Button D12butD20;
     private Button D12butD100;
     private Button D12rollBut;
+    private ImageView Logo;
 
 
     private MainActivity mainActivity;
@@ -140,8 +142,10 @@ public class D12Fragment extends Fragment {
         D12butD20 = (Button) getView().findViewById(R.id.D12ButtonD20);
         D12butD100 = (Button) getView().findViewById(R.id.D12ButtonD100);
         D12rollBut = (Button) getView().findViewById(R.id.D12RollButton);
+        Logo = (ImageView) getView().findViewById(R.id.LogoD12);
 
         if(mainActivity.diceColorGreen == true) {
+            Logo.setImageResource(R.drawable.logogreen);
             D12static.setImageResource(R.drawable.d12_green1);
             D12gif.setImageResource(R.drawable.d12_green);
             D12butD6.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
@@ -154,6 +158,7 @@ public class D12Fragment extends Fragment {
         }
 
         if(mainActivity.diceColorRed == true) {
+            Logo.setImageResource(R.drawable.logored);
             D12static.setImageResource(R.drawable.d12_red1);
             D12gif.setImageResource(R.drawable.d12_red);
             D12butD6.setBackgroundColor(getResources().getColor(R.color.redbutton));
@@ -166,6 +171,7 @@ public class D12Fragment extends Fragment {
         }
 
         if(mainActivity.diceColorBlue == true) {
+            Logo.setImageResource(R.drawable.logoblue);
             D12static.setImageResource(R.drawable.d12_blue1);
             D12gif.setImageResource(R.drawable.d12_blue);
             D12butD6.setBackgroundColor(getResources().getColor(R.color.bluebutton));

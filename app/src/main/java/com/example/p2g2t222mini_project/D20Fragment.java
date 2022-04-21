@@ -48,6 +48,7 @@ public class D20Fragment extends Fragment {
     private Button D20butD4;
     private Button D20butD100;
     private Button D20rollBut;
+    private ImageView Logo;
 
     private double accelCurrentValue;
     private double accelPreviousValue;
@@ -147,8 +148,10 @@ public class D20Fragment extends Fragment {
         D20butD4 = (Button) getView().findViewById(R.id.D20ButtonD4);
         D20butD100 = (Button) getView().findViewById(R.id.D20ButtonD100);
         D20rollBut = (Button) getView().findViewById(R.id.D20RollButton);
+        Logo = (ImageView) getView().findViewById(R.id.LogoD20);
 
         if(mainActivity.diceColorGreen == true) {
+            Logo.setImageResource(R.drawable.logogreen);
             D20static.setImageResource(R.drawable.d20_green1);
             D20gif.setImageResource(R.drawable.d20_green);
             D20butD6.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
@@ -161,6 +164,7 @@ public class D20Fragment extends Fragment {
         }
 
         if(mainActivity.diceColorRed == true) {
+            Logo.setImageResource(R.drawable.logored);
             D20static.setImageResource(R.drawable.d20_red1);
             D20gif.setImageResource(R.drawable.d20_red);
             D20butD6.setBackgroundColor(getResources().getColor(R.color.redbutton));
@@ -173,6 +177,7 @@ public class D20Fragment extends Fragment {
         }
 
         if(mainActivity.diceColorBlue == true) {
+            Logo.setImageResource(R.drawable.logoblue);
             D20static.setImageResource(R.drawable.d20_blue1);
             D20gif.setImageResource(R.drawable.d20_blue);
             D20butD6.setBackgroundColor(getResources().getColor(R.color.bluebutton));

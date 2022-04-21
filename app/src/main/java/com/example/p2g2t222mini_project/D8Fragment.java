@@ -42,6 +42,7 @@ public class D8Fragment extends Fragment {
     private Button D8butD20;
     private Button D8butD100;
     private Button D8rollBut;
+    private ImageView Logo;
 
     private ImageView D8Static;
     private MainActivity mainActivity;
@@ -141,8 +142,10 @@ public class D8Fragment extends Fragment {
         D8butD20 = (Button) getView().findViewById(R.id.D8ButtonD20);
         D8butD100 = (Button) getView().findViewById(R.id.D8ButtonD100);
         D8rollBut = (Button) getView().findViewById(R.id.D8RollButton);
+        Logo = (ImageView) getView().findViewById(R.id.LogoD8);
 
         if(mainActivity.diceColorGreen == true) {
+            Logo.setImageResource(R.drawable.logogreen);
             D8Static.setImageResource(R.drawable.d8_green1);
             D8Gif.setImageResource(R.drawable.d8_green);
             D8butD6.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
@@ -155,6 +158,7 @@ public class D8Fragment extends Fragment {
         }
 
         if(mainActivity.diceColorRed == true) {
+            Logo.setImageResource(R.drawable.logored);
             D8Static.setImageResource(R.drawable.d8_red1);
             D8Gif.setImageResource(R.drawable.d8_red);
             D8butD6.setBackgroundColor(getResources().getColor(R.color.redbutton));
@@ -167,6 +171,7 @@ public class D8Fragment extends Fragment {
         }
 
         if(mainActivity.diceColorBlue == true) {
+            Logo.setImageResource(R.drawable.logoblue);
             D8Static.setImageResource(R.drawable.d8_blue1);
             D8Gif.setImageResource(R.drawable.d8_blue);
             D8butD6.setBackgroundColor(getResources().getColor(R.color.bluebutton));
