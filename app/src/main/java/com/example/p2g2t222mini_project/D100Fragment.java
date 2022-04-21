@@ -40,7 +40,7 @@ public class D100Fragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        rollText100 = (TextView) getView().findViewById(R.id.D100RollText);
+        rollText100 = (TextView) getView().findViewById(R.id.D100RollText1);
 
         binding.D100ButtonD4.setOnClickListener(new View.OnClickListener() {
             @Override
