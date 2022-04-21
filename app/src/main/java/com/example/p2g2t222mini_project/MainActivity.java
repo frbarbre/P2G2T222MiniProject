@@ -28,6 +28,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
@@ -96,5 +98,6 @@ public class MainActivity extends AppCompatActivity {
     public static boolean diceColorGreen = false;
     public static boolean diceColorRed = true;
     public static boolean diceColorBlue = false;
+    public static List rollHistory;
 
 }
