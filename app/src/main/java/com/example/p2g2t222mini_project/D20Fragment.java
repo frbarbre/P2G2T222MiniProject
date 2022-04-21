@@ -44,6 +44,7 @@ public class D20Fragment extends Fragment {
     private double accelPreviousValue;
     private boolean ranRecently = false;
     private MainActivity mainActivity;
+//    private HistoryFragment historyFragment;
 
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
@@ -223,7 +224,7 @@ public class D20Fragment extends Fragment {
                         final int random1to20 = new Random().nextInt((max - min) +1) +min;
                         Integer number = random1to20;
                         rollText20.setText(number.toString());
-                        mainActivity.rollHistory.add("Rolled" + number + "using a D20");
+//                        historyFragment.historyList.add("Rolled" + number.toString() + "using a D20");
                         binding.D20RollButton.setEnabled(true);
                         binding.D20ButtonD4.setEnabled(true);
                         binding.D20ButtonD6.setEnabled(true);
