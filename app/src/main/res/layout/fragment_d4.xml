@@ -132,4 +132,15 @@
         app:layout_constraintTop_toTopOf="@+id/D4StaticDie"
         app:layout_constraintVertical_bias="0.674" />
 
+    <ImageView
+        android:id="@+id/LogoD4"
+        android:layout_width="333dp"
+        android:layout_height="74dp"
+        android:src="@drawable/logored"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.042" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

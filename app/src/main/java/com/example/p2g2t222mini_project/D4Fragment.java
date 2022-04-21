@@ -1,13 +1,10 @@
 package com.example.p2g2t222mini_project;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,16 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -38,6 +31,7 @@ public class D4Fragment extends Fragment {
     private FragmentD4Binding binding;
     private TextView rollText4;
     private GifImageView D4gif;
+    private ImageView Logo;
     private Button D4butD6;
     private Button D4butD8;
     private Button D4butD10;
@@ -142,6 +136,7 @@ public class D4Fragment extends Fragment {
         D4butD20 = (Button) getView().findViewById(R.id.D4ButtonD20);
         D4butD100 = (Button) getView().findViewById(R.id.D4ButtonD100);
         D4rollBut = (Button) getView().findViewById(R.id.D4RollButton);
+        Logo = (ImageView) getView().findViewById(R.id.LogoD4);
 
 
 
@@ -149,6 +144,7 @@ public class D4Fragment extends Fragment {
 
 
         if(mainActivity.diceColorGreen == true){
+            Logo.setImageResource(R.drawable.logogreen);
             D4static.setImageResource(R.drawable.d4_green1);
             D4gif.setImageResource(R.drawable.d4_green);
             D4butD6.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
@@ -161,6 +157,7 @@ public class D4Fragment extends Fragment {
         }
 
         if(mainActivity.diceColorRed == true){
+            Logo.setImageResource(R.drawable.logored);
             D4static.setImageResource(R.drawable.d4_red1);
             D4gif.setImageResource(R.drawable.d4_red);
             D4butD6.setBackgroundColor(getResources().getColor(R.color.redbutton));
@@ -173,6 +170,7 @@ public class D4Fragment extends Fragment {
         }
 
         if(mainActivity.diceColorBlue == true){
+            Logo.setImageResource(R.drawable.logoblue);
             D4static.setImageResource(R.drawable.d4_blue1);
             D4gif.setImageResource(R.drawable.d4_blue);
             D4butD6.setBackgroundColor(getResources().getColor(R.color.bluebutton));

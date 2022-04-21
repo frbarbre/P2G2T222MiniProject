@@ -158,5 +158,17 @@
             app:layout_constraintStart_toStartOf="@+id/D100GIF1"
             app:layout_constraintTop_toTopOf="@+id/D100GIF1"
             app:layout_constraintVertical_bias="0.39" />
+
+        <ImageView
+            android:id="@+id/LogoD100"
+            android:layout_width="333dp"
+            android:layout_height="74dp"
+            android:src="@drawable/logored"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.042" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
