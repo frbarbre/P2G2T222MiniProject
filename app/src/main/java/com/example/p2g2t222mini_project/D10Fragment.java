@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,6 +34,14 @@ public class D10Fragment extends Fragment {
     private TextView rollText10;
     private ImageView D10static;
     private GifImageView D10gif;
+    private Button D10butD6;
+    private Button D10butD8;
+    private Button D10butD4;
+    private Button D10butD12;
+    private Button D10butD20;
+    private Button D10butD100;
+    private Button D10rollBut;
+
     private MainActivity mainActivity;
 
     private double accelCurrentValue;
@@ -122,23 +131,49 @@ public class D10Fragment extends Fragment {
         rollText10 = (TextView) getView().findViewById(R.id.D10RollText);
         D10static = (ImageView) getView().findViewById(R.id.D10Static);
         D10gif = (GifImageView) getView().findViewById(R.id.D10GIF);
+        D10butD6 = (Button) getView().findViewById(R.id.D10ButtonD6);
+        D10butD8 = (Button) getView().findViewById(R.id.D10ButtonD8);
+        D10butD4 = (Button) getView().findViewById(R.id.D10ButtonD4);
+        D10butD12 = (Button) getView().findViewById(R.id.D10ButtonD12);
+        D10butD20 = (Button) getView().findViewById(R.id.D10ButtonD20);
+        D10butD100 = (Button) getView().findViewById(R.id.D10ButtonD100);
+        D10rollBut = (Button) getView().findViewById(R.id.D10RollButton);
+
 
         if(mainActivity.diceColorGreen == true) {
             D10static.setImageResource(R.drawable.d10_green1);
             D10gif.setImageResource(R.drawable.d10_green);
-            ;
+            D10butD6.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D10butD8.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D10butD4.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D10butD12.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D10butD20.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D10butD100.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D10rollBut.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
         }
 
         if(mainActivity.diceColorRed == true) {
             D10static.setImageResource(R.drawable.d10_red1);
             D10gif.setImageResource(R.drawable.d10_red);
-            ;
+            D10butD6.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D10butD8.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D10butD4.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D10butD12.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D10butD20.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D10butD100.setBackgroundColor(getResources().getColor(R.color.redbutton));
+            D10rollBut.setBackgroundColor(getResources().getColor(R.color.redbutton));
         }
 
         if(mainActivity.diceColorBlue == true) {
             D10static.setImageResource(R.drawable.d10_blue1);
             D10gif.setImageResource(R.drawable.d10_blue);
-            ;
+            D10butD6.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D10butD8.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D10butD4.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D10butD12.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D10butD20.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D10butD100.setBackgroundColor(getResources().getColor(R.color.bluebutton));
+            D10rollBut.setBackgroundColor(getResources().getColor(R.color.bluebutton));
         }
 
         binding.D10ButtonD4.setOnClickListener(new View.OnClickListener() {
