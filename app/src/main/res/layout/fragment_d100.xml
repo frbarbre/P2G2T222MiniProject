@@ -84,10 +84,11 @@
             app:layout_constraintVertical_bias="0.816" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/D10GIF1"
+            android:id="@+id/D100GIF1"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/d10_red"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/D100RollButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -96,10 +97,11 @@
             app:layout_constraintVertical_bias="0.437" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/D10GIF2"
+            android:id="@+id/D100GIF2"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/d10_red"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/D100RollButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -112,48 +114,49 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/d10_red1"
-            app:layout_constraintBottom_toBottomOf="@+id/D10GIF1"
-            app:layout_constraintEnd_toEndOf="@+id/D10GIF1"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/D10GIF1"
-            app:layout_constraintTop_toTopOf="@+id/D10GIF1"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintBottom_toBottomOf="@+id/D100GIF1"
+            app:layout_constraintEnd_toEndOf="@+id/D100GIF1"
+            app:layout_constraintStart_toStartOf="@+id/D100GIF1"
+            app:layout_constraintTop_toTopOf="@+id/D100GIF1" />
 
         <ImageView
             android:id="@+id/D100Static2"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/d10_red1"
-            app:layout_constraintBottom_toBottomOf="@+id/D10GIF2"
-            app:layout_constraintEnd_toEndOf="@+id/D10GIF2"
-            app:layout_constraintStart_toStartOf="@+id/D10GIF2"
-            app:layout_constraintTop_toTopOf="@+id/D10GIF2" />
+            app:layout_constraintBottom_toBottomOf="@+id/D100GIF2"
+            app:layout_constraintEnd_toEndOf="@+id/D100GIF2"
+            app:layout_constraintStart_toStartOf="@+id/D100GIF2"
+            app:layout_constraintTop_toTopOf="@+id/D100GIF2" />
 
         <TextView
-            android:id="@+id/D100RollText1"
+            android:id="@+id/D100RollText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" "
             android:textColor="@color/white"
             android:textSize="35sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/D10GIF2"
-            app:layout_constraintEnd_toEndOf="@+id/D10GIF2"
-            app:layout_constraintStart_toStartOf="@+id/D10GIF2"
-            app:layout_constraintTop_toTopOf="@+id/D10GIF2" />
-
-        <TextView
-            android:id="@+id/d100RollText2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" "
-            android:textColor="@color/white"
-            android:textSize="35sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/D10GIF1"
-            app:layout_constraintEnd_toEndOf="@+id/D10GIF1"
+            app:layout_constraintBottom_toBottomOf="@+id/D100GIF2"
+            app:layout_constraintEnd_toEndOf="@+id/D100GIF2"
             app:layout_constraintHorizontal_bias="0.503"
-            app:layout_constraintStart_toStartOf="@+id/D10GIF1"
-            app:layout_constraintTop_toTopOf="@+id/D10GIF1" />
+            app:layout_constraintStart_toStartOf="@+id/D100GIF2"
+            app:layout_constraintTop_toTopOf="@+id/D100GIF2"
+            app:layout_constraintVertical_bias="0.398" />
+
+        <TextView
+            android:id="@+id/d100RollText1"
+            android:layout_width="9dp"
+            android:layout_height="45dp"
+            android:text=" "
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/D100GIF1"
+            app:layout_constraintEnd_toEndOf="@+id/D100GIF1"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="@+id/D100GIF1"
+            app:layout_constraintTop_toTopOf="@+id/D100GIF1"
+            app:layout_constraintVertical_bias="0.39" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
