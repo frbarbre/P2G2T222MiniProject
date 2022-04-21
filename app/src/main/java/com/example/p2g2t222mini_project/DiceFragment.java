@@ -21,7 +21,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 import com.example.p2g2t222mini_project.databinding.FragmentDiceBinding;
 
 import java.util.Random;
@@ -51,6 +50,7 @@ public class DiceFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
         binding.DiceGreenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +75,7 @@ public class DiceFragment extends Fragment {
                 mainActivity.diceColorGreen = false;
                 mainActivity.diceColorRed = false;
                 mainActivity.diceColorBlue = true;
+
             }
         });
     }

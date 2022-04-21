@@ -1,11 +1,15 @@
 package com.example.p2g2t222mini_project;
 
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
@@ -28,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-    private BottomNavigationView bottomNavigationView;
+    private ImageView logoImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +96,5 @@ public class MainActivity extends AppCompatActivity {
     public static boolean diceColorGreen = false;
     public static boolean diceColorRed = true;
     public static boolean diceColorBlue = false;
-
 
 }

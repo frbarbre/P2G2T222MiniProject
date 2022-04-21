@@ -39,15 +39,40 @@
         </androidx.appcompat.widget.Toolbar>
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/LogoImageRed"
             android:layout_width="307dp"
             android:layout_height="71dp"
+            android:src="@drawable/logored"
             app:layout_constraintBottom_toBottomOf="@+id/include"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/include"
             app:layout_constraintTop_toTopOf="@+id/include"
-            app:layout_constraintVertical_bias="0.024"
-            app:srcCompat="@drawable/logored" />
+            app:layout_constraintVertical_bias="0.024"/>
+
+        <ImageView
+            android:id="@+id/LogoImageGreen"
+            android:layout_width="307dp"
+            android:layout_height="71dp"
+            android:src="@drawable/logogreen"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/include"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/include"
+            app:layout_constraintTop_toTopOf="@+id/include"
+            app:layout_constraintVertical_bias="0.024"/>
+
+        <ImageView
+            android:id="@+id/LogoImageBlue"
+            android:layout_width="307dp"
+            android:layout_height="71dp"
+            android:src="@drawable/logoblue"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/include"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/include"
+            app:layout_constraintTop_toTopOf="@+id/include"
+            app:layout_constraintVertical_bias="0.024"/>
+<!--            app:srcCompat="@drawable/logored" />-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

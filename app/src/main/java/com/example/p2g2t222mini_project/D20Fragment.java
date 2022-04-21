@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -93,7 +94,6 @@ public class D20Fragment extends Fragment {
                         binding.D20ButtonD10.setEnabled(true);
                         binding.D20ButtonD12.setEnabled(true);
                         binding.D20ButtonD100.setEnabled(true);
-//                        mainActivity.enableBottomNav();
                         D20gif.setVisibility(View.GONE);
                         D20static.setVisibility(View.VISIBLE);
                         bNavView.setVisibility(View.VISIBLE);
@@ -134,7 +134,6 @@ public class D20Fragment extends Fragment {
         if(mainActivity.diceColorGreen == true) {
             D20static.setImageResource(R.drawable.d20_green1);
             D20gif.setImageResource(R.drawable.d20_green);
-            ;
         }
 
         if(mainActivity.diceColorRed == true) {

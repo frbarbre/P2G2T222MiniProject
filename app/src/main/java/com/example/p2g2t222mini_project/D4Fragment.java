@@ -1,6 +1,8 @@
 package com.example.p2g2t222mini_project;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -12,11 +14,14 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -33,15 +38,11 @@ public class D4Fragment extends Fragment {
     private FragmentD4Binding binding;
     private TextView rollText4;
     private GifImageView D4gif;
-//    private GifImageView D8gif;
-//    private GifImageView D10gif;
-//    private GifImageView D12gif;
-//    private GifImageView D20gif;
+    private Button D4butD6;
+    private Button D4butD8;
+
     private ImageView D4static;
-//    private ImageView D8static;
-//    private ImageView D10static;
-//    private ImageView D12static;
-//    private ImageView D20static;
+
     private static MainActivity mainActivity;
 
     private double accelCurrentValue;
@@ -129,13 +130,18 @@ public class D4Fragment extends Fragment {
 
         rollText4 = (TextView) getView().findViewById(R.id.D4RollText);
         D4gif = (GifImageView) getView().findViewById(R.id.D4GIF);
+        D4butD6 = (Button) getView().findViewById(R.id.D4ButtonD6);
+        D4butD8 = (Button) getView().findViewById(R.id.D4ButtonD8);
+
 
         D4static = (ImageView) getView().findViewById(R.id.D4StaticDie);
 
 
         if(mainActivity.diceColorGreen == true){
             D4static.setImageResource(R.drawable.d4_green1);
-            D4gif.setImageResource(R.drawable.d4_green);;
+            D4gif.setImageResource(R.drawable.d4_green);
+            D4butD6.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
+            D4butD8.setBackgroundColor(getResources().getColor(R.color.greeenbutton));
         }
 
         if(mainActivity.diceColorRed == true){
@@ -147,7 +153,6 @@ public class D4Fragment extends Fragment {
             D4static.setImageResource(R.drawable.d4_blue1);
             D4gif.setImageResource(R.drawable.d4_blue);;
         }
-
 
         binding.D4ButtonD10.setOnClickListener(new View.OnClickListener() {
             @Override
