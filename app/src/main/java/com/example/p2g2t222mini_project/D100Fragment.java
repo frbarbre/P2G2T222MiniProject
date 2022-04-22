@@ -22,6 +22,8 @@ import android.os.Handler;
 import com.example.p2g2t222mini_project.databinding.FragmentD100Binding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.w3c.dom.Text;
+
 import java.util.Random;
 
 import pl.droidsonroids.gif.GifImageView;
@@ -30,6 +32,8 @@ public class D100Fragment extends Fragment {
 
     private FragmentD100Binding binding;
     private TextView rollText100;
+    private TextView rollText100Two;
+    private TextView rollText100Sum;
     private ImageView D100static1;
     private ImageView D100static2;
     private GifImageView D100gif1;
@@ -134,7 +138,9 @@ public class D100Fragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        rollText100 = (TextView) getView().findViewById(R.id.D100RollText2);
+        rollText100 = (TextView) getView().findViewById(R.id.d100RollText1);
+        rollText100Two = (TextView) getView().findViewById(R.id.D100RollText2);
+        rollText100Sum = (TextView) getView().findViewById(R.id.D100RollSum);
         D100static1 = (ImageView) getView().findViewById(R.id.D100Static1);
         D100static2 = (ImageView) getView().findViewById(R.id.D100Static2);
         D100gif1 = (GifImageView) getView().findViewById(R.id.D100GIF1);
@@ -267,11 +273,20 @@ public class D100Fragment extends Fragment {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        final int min = 1;
-                        final int max = 100;
-                        final int random1to100 = new Random().nextInt((max - min) +1) +min;
-                        Integer number = random1to100;
+                        final int min = 0;
+                        final int max = 9;
+                        final int random0to9 = new Random().nextInt((max - min) +1) +min;
+                        Integer number = random0to9;
                         rollText100.setText(number.toString());
+                        final int min2 = 0;
+                        final int max2 = 9;
+                        final int random0to9Two = new Random().nextInt((max2 - min2) +1) +min2;
+                        Integer number2 = random0to9Two;
+                        rollText100Two.setText(number2.toString());
+                        rollText100Sum.setText(number.toString()+number2.toString());
+                        if(number == 0 && number2 == 0){
+                            rollText100Sum.setText("100");
+                        }
                         binding.D100RollButton.setEnabled(true);
                         binding.D100ButtonD4.setEnabled(true);
                         binding.D100ButtonD6.setEnabled(true);
