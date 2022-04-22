@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FF972520</color>
-    <color name="purple_500">#FF972520</color>
+    <color name="purple_200">@color/material_dynamic_neutral99</color>
+    <color name="purple_500">@color/material_dynamic_neutral99</color>
     <color name="purple_700">#00141414</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
@@ -12,4 +12,5 @@
     <color name="greeenbutton">#FF73C043</color>
     <color name="bluebutton">#FF4998CD</color>
     <color name="redbutton">#FF972520</color>
+    <color name="selectedbutton">@color/material_dynamic_neutral90</color>
 </resources>

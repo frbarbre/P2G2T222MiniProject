@@ -34,7 +34,7 @@
             android:id="@+id/D12NonButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#4CAF50"
+            android:backgroundTint="@color/selectedbutton"
             android:text="D12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/D12ButtonD10" />
