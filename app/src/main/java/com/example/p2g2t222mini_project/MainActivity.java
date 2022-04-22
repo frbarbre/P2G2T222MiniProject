@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -100,5 +102,14 @@ public class MainActivity extends AppCompatActivity {
     public static boolean diceColorRed = true;
     public static boolean diceColorBlue = false;
     public static List rollHistory;
+
+    void reload(){
+        final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        // R.id.fragment_layout is your fragment container view;
+
+        Fragment dicefragment = new DiceFragment();
+        ft.replace(R.id.diceFragment, dicefragment);
+        ft.commit();
+    }
 
 }

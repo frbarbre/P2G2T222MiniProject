@@ -45,33 +45,6 @@ public class DiceFragment extends Fragment {
         LogoGreen = (ImageView) getView().findViewById(R.id.LogoDiceGreen);
         LogoBlue = (ImageView) getView().findViewById(R.id.LogoDiceBlue);
 
-        if(mainActivity.diceColorGreen == true) {
-            LogoRed.setVisibility(View.INVISIBLE);
-            LogoGreen.setVisibility(View.VISIBLE);
-            LogoBlue.setVisibility(View.INVISIBLE);
-            NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main);
-            navController.popBackStack();
-            navController.navigate(R.id.diceFragment);
-
-        }
-
-        if(mainActivity.diceColorRed == true) {
-            LogoRed.setVisibility(View.VISIBLE);
-            LogoGreen.setVisibility(View.INVISIBLE);
-            LogoBlue.setVisibility(View.INVISIBLE);
-            NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main);
-            navController.popBackStack();
-            navController.navigate(R.id.diceFragment);
-        }
-
-        if(mainActivity.diceColorBlue == true) {
-            LogoRed.setVisibility(View.INVISIBLE);
-            LogoGreen.setVisibility(View.INVISIBLE);
-            LogoBlue.setVisibility(View.VISIBLE);
-            NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main);
-            navController.popBackStack();
-            navController.navigate(R.id.diceFragment);
-        }
 
         binding.DiceGreenButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +52,9 @@ public class DiceFragment extends Fragment {
                 mainActivity.diceColorGreen = true;
                 mainActivity.diceColorRed = false;
                 mainActivity.diceColorBlue = false;
+                LogoRed.setVisibility(View.GONE);
+                LogoGreen.setVisibility(View.VISIBLE);
+                LogoBlue.setVisibility(View.GONE);
             }
         });
 
@@ -88,6 +64,9 @@ public class DiceFragment extends Fragment {
                 mainActivity.diceColorGreen = false;
                 mainActivity.diceColorRed = true;
                 mainActivity.diceColorBlue = false;
+                LogoRed.setVisibility(View.VISIBLE);
+                LogoGreen.setVisibility(View.GONE);
+                LogoBlue.setVisibility(View.GONE);
             }
         });
 
@@ -97,6 +76,9 @@ public class DiceFragment extends Fragment {
                 mainActivity.diceColorGreen = false;
                 mainActivity.diceColorRed = false;
                 mainActivity.diceColorBlue = true;
+                LogoRed.setVisibility(View.GONE);
+                LogoGreen.setVisibility(View.GONE);
+                LogoBlue.setVisibility(View.VISIBLE);
 
             }
         });
