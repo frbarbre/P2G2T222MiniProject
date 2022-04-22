@@ -43,20 +43,21 @@ public class DiceFragment extends Fragment {
         LogoBlue = (ImageView) getView().findViewById(R.id.LogoDiceBlue);
 
         if(mainActivity.diceColorGreen == true) {
-            LogoRed.setVisibility(View.GONE);
+            LogoRed.setVisibility(View.INVISIBLE);
             LogoGreen.setVisibility(View.VISIBLE);
-            LogoBlue.setVisibility(View.GONE);
+            LogoBlue.setVisibility(View.INVISIBLE);
+
         }
 
         if(mainActivity.diceColorRed == true) {
             LogoRed.setVisibility(View.VISIBLE);
-            LogoGreen.setVisibility(View.GONE);
-            LogoBlue.setVisibility(View.GONE);
+            LogoGreen.setVisibility(View.INVISIBLE);
+            LogoBlue.setVisibility(View.INVISIBLE);
         }
 
         if(mainActivity.diceColorBlue == true) {
-            LogoRed.setVisibility(View.GONE);
-            LogoGreen.setVisibility(View.GONE);
+            LogoRed.setVisibility(View.INVISIBLE);
+            LogoGreen.setVisibility(View.INVISIBLE);
             LogoBlue.setVisibility(View.VISIBLE);
         }
 
