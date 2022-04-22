@@ -80,6 +80,8 @@ public class D100Fragment extends Fragment {
                 bNavView.setVisibility(View.GONE);
                 String resetString = " ";
                 rollText100.setText(resetString);
+                rollText100Two.setText(resetString);
+                rollText100Sum.setText(resetString);
                 D100gif1.setVisibility(View.VISIBLE);
                 D100gif2.setVisibility(View.VISIBLE);
                 D100static1.setVisibility(View.GONE);
@@ -95,6 +97,15 @@ public class D100Fragment extends Fragment {
                         final int random1to20 = new Random().nextInt((max - min) +1) +min;
                         Integer number = random1to20;
                         rollText100.setText(number.toString());
+                        final int min2 = 0;
+                        final int max2 = 9;
+                        final int random0to9Two = new Random().nextInt((max2 - min2) +1) +min2;
+                        Integer number2 = random0to9Two;
+                        rollText100Two.setText(number2.toString());
+                        rollText100Sum.setText(number.toString()+number2.toString());
+                        if(number == 0 && number2 == 0){
+                            rollText100Sum.setText("100");
+                        }
                         binding.D100RollButton.setEnabled(true);
                         binding.D100RollButton.setEnabled(true);
                         binding.D100ButtonD4.setEnabled(true);
@@ -263,6 +274,8 @@ public class D100Fragment extends Fragment {
                 bNavView.setVisibility(View.GONE);
                 String resetString = " ";
                 rollText100.setText(resetString);
+                rollText100Two.setText(resetString);
+                rollText100Sum.setText(resetString);
                 D100gif1.setVisibility(View.VISIBLE);
                 D100gif2.setVisibility(View.VISIBLE);
                 D100static1.setVisibility(View.GONE);
