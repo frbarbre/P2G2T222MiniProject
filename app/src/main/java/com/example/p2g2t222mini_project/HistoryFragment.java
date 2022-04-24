@@ -19,6 +19,7 @@ import android.widget.ListView;
 
 import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -61,10 +62,15 @@ public class HistoryFragment extends Fragment {
 
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
+        mAdapter.notifyDataSetChanged();
+        Collections.sort(rollHistoryList, RollHistoryItem.rollHistoryItemIDComparator);
+        mAdapter.notifyDataSetChanged();
+
 
         return view;
 
     }
+
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

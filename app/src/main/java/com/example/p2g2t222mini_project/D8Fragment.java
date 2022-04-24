@@ -255,23 +255,26 @@ public class D8Fragment extends Fragment {
                 if(mainActivity.diceColorRed == true) {
                     Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d8_red1);
                     int nextID = globalList.getNextID();
-                    RollHistoryItem item = new RollHistoryItem(nextID, "D8", number, diceImage);
+                    int sortingid = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D8", number, diceImage, sortingid);
                     rollHistoryList.add(item);
-                    globalList.setNextID(nextID++);
+                    globalList.setNextID(nextID+1);
                 }
                 if(mainActivity.diceColorGreen == true) {
                     Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d8_green1);
                     int nextID = globalList.getNextID();
-                    RollHistoryItem item = new RollHistoryItem(nextID, "D8", number, diceImage);
+                    int sortingid = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D8", number, diceImage, sortingid);
                     rollHistoryList.add(item);
-                    globalList.setNextID(nextID++);
+                    globalList.setNextID(nextID+1);
                 }
                 if(mainActivity.diceColorBlue == true) {
                     Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d8_blue1);
                     int nextID = globalList.getNextID();
-                    RollHistoryItem item = new RollHistoryItem(nextID, "D8", number, diceImage);
+                    int sortingid = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D8", number, diceImage, sortingid);
                     rollHistoryList.add(item);
-                    globalList.setNextID(nextID++);
+                    globalList.setNextID(nextID+1);
                     ranRecently = false;
                 }
             }

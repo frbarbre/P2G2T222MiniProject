@@ -23,6 +23,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -252,23 +253,26 @@ public class D4Fragment extends Fragment {
                 if(mainActivity.diceColorRed == true) {
                     Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d4_red1);
                     int nextID = globalList.getNextID();
-                    RollHistoryItem item = new RollHistoryItem(nextID, "D4", number, diceImage);
+                    int sortingid = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D4", number, diceImage, sortingid);
                     rollHistoryList.add(item);
-                    globalList.setNextID(nextID++);
+                    globalList.setNextID(nextID+1);
                 }
                 if(mainActivity.diceColorGreen == true) {
                     Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d4_green1);
                     int nextID = globalList.getNextID();
-                    RollHistoryItem item = new RollHistoryItem(nextID, "D4", number, diceImage);
+                    int sortingid = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D4", number, diceImage, sortingid);
                     rollHistoryList.add(item);
-                    globalList.setNextID(nextID++);
+                    globalList.setNextID(nextID+1);
                 }
                 if(mainActivity.diceColorBlue == true) {
                     Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d4_blue1);
                     int nextID = globalList.getNextID();
-                    RollHistoryItem item = new RollHistoryItem(nextID, "D4", number, diceImage);
+                    int sortingid = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D4", number, diceImage, sortingid);
                     rollHistoryList.add(item);
-                    globalList.setNextID(nextID++);
+                    globalList.setNextID(nextID+1);
                 }
                 ranRecently = false;
             }

@@ -25,6 +25,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.w3c.dom.Text;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -50,6 +51,7 @@ public class D100Fragment extends Fragment {
     private ImageView Logo;
     private List<RollHistoryItem> rollHistoryList;
     private GlobalList globalList;
+    private HistoryFragment historyFragment;
 
     private double accelCurrentValue;
     private double accelPreviousValue;
@@ -282,23 +284,26 @@ public class D100Fragment extends Fragment {
                 if(mainActivity.diceColorRed == true) {
                     Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d100_redstatic);
                     int nextID = globalList.getNextID();
-                    RollHistoryItem item = new RollHistoryItem(nextID, "D100", Integer.parseInt(rollText100Sum.getText().toString()), diceImage);
+                    int sortingid = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D100", Integer.parseInt(rollText100Sum.getText().toString()), diceImage, sortingid);
                     rollHistoryList.add(item);
-                    globalList.setNextID(nextID++);
+                    globalList.setNextID(nextID+1);
                 }
                 if(mainActivity.diceColorGreen == true) {
                     Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d100_greenstatic);
                     int nextID = globalList.getNextID();
-                    RollHistoryItem item = new RollHistoryItem(nextID, "D100", Integer.parseInt(rollText100Sum.getText().toString()), diceImage);
+                    int sortingid = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D100", Integer.parseInt(rollText100Sum.getText().toString()), diceImage, sortingid);
                     rollHistoryList.add(item);
-                    globalList.setNextID(nextID++);
+                    globalList.setNextID(nextID+1);
                 }
                 if(mainActivity.diceColorBlue == true) {
                     Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d100_bluestatic);
                     int nextID = globalList.getNextID();
-                    RollHistoryItem item = new RollHistoryItem(nextID, "D100", Integer.parseInt(rollText100Sum.getText().toString()), diceImage);
+                    int sortingid = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D100", Integer.parseInt(rollText100Sum.getText().toString()), diceImage, sortingid);
                     rollHistoryList.add(item);
-                    globalList.setNextID(nextID++);
+                    globalList.setNextID(nextID+1);
                 }
                 ranRecently = false;
             }

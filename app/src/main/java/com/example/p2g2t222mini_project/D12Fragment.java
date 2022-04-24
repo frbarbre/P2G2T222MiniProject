@@ -254,23 +254,26 @@ public class D12Fragment extends Fragment {
                 if(mainActivity.diceColorRed == true) {
                     Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d12_red1);
                     int nextID = globalList.getNextID();
-                    RollHistoryItem item = new RollHistoryItem(nextID, "D12", number, diceImage);
+                    int sortingid = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D12", number, diceImage, sortingid);
                     rollHistoryList.add(item);
-                    globalList.setNextID(nextID++);
+                    globalList.setNextID(nextID+1);
                 }
                 if(mainActivity.diceColorGreen == true) {
                     Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d12_green1);
                     int nextID = globalList.getNextID();
-                    RollHistoryItem item = new RollHistoryItem(nextID, "D12", number, diceImage);
+                    int sortingid = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D12", number, diceImage, sortingid);
                     rollHistoryList.add(item);
-                    globalList.setNextID(nextID++);
+                    globalList.setNextID(nextID+1);
                 }
                 if(mainActivity.diceColorBlue == true) {
                     Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d12_blue1);
                     int nextID = globalList.getNextID();
-                    RollHistoryItem item = new RollHistoryItem(nextID, "D12", number, diceImage);
+                    int sortingid = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D12", number, diceImage, sortingid);
                     rollHistoryList.add(item);
-                    globalList.setNextID(nextID++);
+                    globalList.setNextID(nextID+1);
                 }
                 ranRecently = false;
             }
