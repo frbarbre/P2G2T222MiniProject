@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,20 +24,26 @@ import java.util.List;
 
 public class HistoryFragment extends Fragment {
 
-    List<RollHistoryItem> historyList = new ArrayList<RollHistoryItem>();
+//    List<RollHistoryItem> historyList = new ArrayList<RollHistoryItem>();
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private GlobalList globalList;
+    private List<RollHistoryItem> rollHistoryList;
+
+
+
+    @Override public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        globalList = (GlobalList) getActivity().getApplication();
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
-
-
-
-
+        rollHistoryList = globalList.getRollHistoryList();
 
         }
 
@@ -49,10 +56,7 @@ public class HistoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_history, container, false);
         recyclerView = view.findViewById(R.id.HistoryRecycler);
         recyclerView.setHasFixedSize(true);
-        mAdapter = new RecyclerViewAdapter(historyList, getContext());
-        Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d20_red1);
-        RollHistoryItem r0 = new RollHistoryItem(0,"D20", 6, diceImage);
-        historyList.add(r0);
+        mAdapter = new RecyclerViewAdapter(rollHistoryList, getContext());
         recyclerView.setAdapter(mAdapter);
 
         layoutManager = new LinearLayoutManager(getContext());

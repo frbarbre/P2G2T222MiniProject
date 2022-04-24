@@ -101,15 +101,5 @@ public class MainActivity extends AppCompatActivity {
     public static boolean diceColorGreen = false;
     public static boolean diceColorRed = true;
     public static boolean diceColorBlue = false;
-    public static List rollHistory;
-
-    void reload(){
-        final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        // R.id.fragment_layout is your fragment container view;
-
-        Fragment dicefragment = new DiceFragment();
-        ft.replace(R.id.diceFragment, dicefragment);
-        ft.commit();
-    }
 
 }

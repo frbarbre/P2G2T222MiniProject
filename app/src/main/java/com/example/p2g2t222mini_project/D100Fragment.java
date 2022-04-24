@@ -1,6 +1,7 @@
 package com.example.p2g2t222mini_project;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -24,6 +25,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.w3c.dom.Text;
 
+import java.util.List;
 import java.util.Random;
 
 import pl.droidsonroids.gif.GifImageView;
@@ -46,6 +48,8 @@ public class D100Fragment extends Fragment {
     private Button D100butD20;
     private Button D100rollBut;
     private ImageView Logo;
+    private List<RollHistoryItem> rollHistoryList;
+    private GlobalList globalList;
 
     private double accelCurrentValue;
     private double accelPreviousValue;
@@ -67,61 +71,7 @@ public class D100Fragment extends Fragment {
 
 
             if (accelChangeValue > 12 && ranRecently == false){
-                ranRecently = true;
-                binding.D100RollButton.setEnabled(false);
-                binding.D100ButtonD4.setEnabled(false);
-                binding.D100ButtonD6.setEnabled(false);
-                binding.D100ButtonD8.setEnabled(false);
-                binding.D100ButtonD10.setEnabled(false);
-                binding.D100ButtonD10.setEnabled(false);
-                binding.D100ButtonD12.setEnabled(false);
-                binding.D100ButtonD20.setEnabled(false);
-                BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
-                bNavView.setVisibility(View.GONE);
-                String resetString = " ";
-                rollText100.setText(resetString);
-                rollText100Two.setText(resetString);
-                rollText100Sum.setText(resetString);
-                D100gif1.setVisibility(View.VISIBLE);
-                D100gif2.setVisibility(View.VISIBLE);
-                D100static1.setVisibility(View.GONE);
-                D100static2.setVisibility(View.GONE);
-                MediaPlayer mediaPlayer = new MediaPlayer();
-                mediaPlayer = MediaPlayer.create(getContext(), R.raw.dice);
-                mediaPlayer.start();
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        final int min = 1;
-                        final int max = 20;
-                        final int random1to20 = new Random().nextInt((max - min) +1) +min;
-                        Integer number = random1to20;
-                        rollText100.setText(number.toString());
-                        final int min2 = 0;
-                        final int max2 = 9;
-                        final int random0to9Two = new Random().nextInt((max2 - min2) +1) +min2;
-                        Integer number2 = random0to9Two;
-                        rollText100Two.setText(number2.toString());
-                        rollText100Sum.setText(number.toString()+number2.toString());
-                        if(number == 0 && number2 == 0){
-                            rollText100Sum.setText("100");
-                        }
-                        binding.D100RollButton.setEnabled(true);
-                        binding.D100RollButton.setEnabled(true);
-                        binding.D100ButtonD4.setEnabled(true);
-                        binding.D100ButtonD6.setEnabled(true);
-                        binding.D100ButtonD8.setEnabled(true);
-                        binding.D100ButtonD10.setEnabled(true);
-                        binding.D100ButtonD12.setEnabled(true);
-                        binding.D100ButtonD20.setEnabled(true);
-                        D100gif1.setVisibility(View.GONE);
-                        D100gif2.setVisibility(View.GONE);
-                        D100static1.setVisibility(View.VISIBLE);
-                        D100static2.setVisibility(View.VISIBLE);
-                        bNavView.setVisibility(View.VISIBLE);
-                        ranRecently = false;
-                    }
-                },2000); //this is the delay before button is re-activated
+                onRollDice();
             }
         }
 
@@ -130,6 +80,11 @@ public class D100Fragment extends Fragment {
 
         }
     };
+
+    @Override public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        globalList = (GlobalList) getActivity().getApplication();
+    }
 
     @Override
     public View onCreateView(
@@ -141,6 +96,8 @@ public class D100Fragment extends Fragment {
 
         mSensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+        rollHistoryList = globalList.getRollHistoryList();
 
         return binding.getRoot();
 
@@ -263,60 +220,89 @@ public class D100Fragment extends Fragment {
         binding.D100RollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                binding.D100RollButton.setEnabled(false);
-                binding.D100ButtonD4.setEnabled(false);
-                binding.D100ButtonD6.setEnabled(false);
-                binding.D100ButtonD8.setEnabled(false);
-                binding.D100ButtonD10.setEnabled(false);
-                binding.D100ButtonD12.setEnabled(false);
-                binding.D100ButtonD20.setEnabled(false);
-                BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
-                bNavView.setVisibility(View.GONE);
-                String resetString = " ";
-                rollText100.setText(resetString);
-                rollText100Two.setText(resetString);
-                rollText100Sum.setText(resetString);
-                D100gif1.setVisibility(View.VISIBLE);
-                D100gif2.setVisibility(View.VISIBLE);
-                D100static1.setVisibility(View.GONE);
-                D100static2.setVisibility(View.GONE);
-                MediaPlayer mediaPlayer = new MediaPlayer();
-                mediaPlayer = MediaPlayer.create(getContext(), R.raw.dice);
-                mediaPlayer.start();
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        final int min = 0;
-                        final int max = 9;
-                        final int random0to9 = new Random().nextInt((max - min) +1) +min;
-                        Integer number = random0to9;
-                        rollText100.setText(number.toString());
-                        final int min2 = 0;
-                        final int max2 = 9;
-                        final int random0to9Two = new Random().nextInt((max2 - min2) +1) +min2;
-                        Integer number2 = random0to9Two;
-                        rollText100Two.setText(number2.toString());
-                        rollText100Sum.setText(number.toString()+number2.toString());
-                        if(number == 0 && number2 == 0){
-                            rollText100Sum.setText("100");
-                        }
-                        binding.D100RollButton.setEnabled(true);
-                        binding.D100ButtonD4.setEnabled(true);
-                        binding.D100ButtonD6.setEnabled(true);
-                        binding.D100ButtonD8.setEnabled(true);
-                        binding.D100ButtonD10.setEnabled(true);
-                        binding.D100ButtonD12.setEnabled(true);
-                        binding.D100ButtonD20.setEnabled(true);
-                        D100gif1.setVisibility(View.GONE);
-                        D100gif2.setVisibility(View.GONE);
-                        D100static1.setVisibility(View.VISIBLE);
-                        D100static2.setVisibility(View.VISIBLE);
-                        bNavView.setVisibility(View.VISIBLE);
-                    }
-                },2000); //this is the delay before button is re-activated
+                onRollDice();
 
             }
         });
+    }
+
+    private void onRollDice(){
+        ranRecently = true;
+        binding.D100RollButton.setEnabled(false);
+        binding.D100ButtonD4.setEnabled(false);
+        binding.D100ButtonD6.setEnabled(false);
+        binding.D100ButtonD8.setEnabled(false);
+        binding.D100ButtonD10.setEnabled(false);
+        binding.D100ButtonD10.setEnabled(false);
+        binding.D100ButtonD12.setEnabled(false);
+        binding.D100ButtonD20.setEnabled(false);
+        BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
+        bNavView.setVisibility(View.GONE);
+        String resetString = " ";
+        rollText100.setText(resetString);
+        rollText100Two.setText(resetString);
+        rollText100Sum.setText(resetString);
+        D100gif1.setVisibility(View.VISIBLE);
+        D100gif2.setVisibility(View.VISIBLE);
+        D100static1.setVisibility(View.GONE);
+        D100static2.setVisibility(View.GONE);
+        MediaPlayer mediaPlayer = new MediaPlayer();
+        mediaPlayer = MediaPlayer.create(getContext(), R.raw.dice);
+        mediaPlayer.start();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                final int min = 0;
+                final int max = 9;
+                final int random1to10 = new Random().nextInt((max - min) +1) +min;
+                Integer number = random1to10;
+                rollText100.setText(number.toString());
+                final int min2 = 0;
+                final int max2 = 9;
+                final int random0to9Two = new Random().nextInt((max2 - min2) +1) +min2;
+                Integer number2 = random0to9Two;
+                rollText100Two.setText(number2.toString());
+                rollText100Sum.setText(number.toString()+number2.toString());
+                if(number == 0 && number2 == 0){
+                    rollText100Sum.setText("100");
+                }
+                binding.D100RollButton.setEnabled(true);
+                binding.D100RollButton.setEnabled(true);
+                binding.D100ButtonD4.setEnabled(true);
+                binding.D100ButtonD6.setEnabled(true);
+                binding.D100ButtonD8.setEnabled(true);
+                binding.D100ButtonD10.setEnabled(true);
+                binding.D100ButtonD12.setEnabled(true);
+                binding.D100ButtonD20.setEnabled(true);
+                D100gif1.setVisibility(View.GONE);
+                D100gif2.setVisibility(View.GONE);
+                D100static1.setVisibility(View.VISIBLE);
+                D100static2.setVisibility(View.VISIBLE);
+                bNavView.setVisibility(View.VISIBLE);
+                if(mainActivity.diceColorRed == true) {
+                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d10_red1);
+                    int nextID = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D100", Integer.parseInt(rollText100Sum.getText().toString()), diceImage);
+                    rollHistoryList.add(item);
+                    globalList.setNextID(nextID++);
+                }
+                if(mainActivity.diceColorGreen == true) {
+                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d10_green1);
+                    int nextID = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D100", Integer.parseInt(rollText100Sum.getText().toString()), diceImage);
+                    rollHistoryList.add(item);
+                    globalList.setNextID(nextID++);
+                }
+                if(mainActivity.diceColorBlue == true) {
+                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d10_blue1);
+                    int nextID = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D100", Integer.parseInt(rollText100Sum.getText().toString()), diceImage);
+                    rollHistoryList.add(item);
+                    globalList.setNextID(nextID++);
+                }
+                ranRecently = false;
+            }
+        },2000); //this is the delay before button is re-activated
     }
 
     public void onResume(){

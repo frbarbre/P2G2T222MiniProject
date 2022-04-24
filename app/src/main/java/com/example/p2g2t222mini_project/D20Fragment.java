@@ -2,6 +2,7 @@ package com.example.p2g2t222mini_project;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -31,6 +32,7 @@ import org.w3c.dom.Text;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Random;
 
 import pl.droidsonroids.gif.GifImageView;
@@ -49,12 +51,13 @@ public class D20Fragment extends Fragment {
     private Button D20butD100;
     private Button D20rollBut;
     private ImageView Logo;
+    private List<RollHistoryItem> rollHistoryList;
+    private GlobalList globalList;
 
     private double accelCurrentValue;
     private double accelPreviousValue;
     private boolean ranRecently = false;
     private MainActivity mainActivity;
-//    private HistoryFragment historyFragment;
 
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
@@ -71,46 +74,7 @@ public class D20Fragment extends Fragment {
 
 
             if (accelChangeValue > 12 && ranRecently == false){
-                ranRecently = true;
-                binding.D20RollButton.setEnabled(false);
-                binding.D20ButtonD4.setEnabled(false);
-                binding.D20ButtonD6.setEnabled(false);
-                binding.D20ButtonD8.setEnabled(false);
-                binding.D20ButtonD10.setEnabled(false);
-                binding.D20ButtonD10.setEnabled(false);
-                binding.D20ButtonD12.setEnabled(false);
-                binding.D20ButtonD100.setEnabled(false);
-                BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
-                bNavView.setVisibility(View.GONE);
-                String resetString = " ";
-                rollText20.setText(resetString);
-                D20gif.setVisibility(View.VISIBLE);
-                D20static.setVisibility(View.GONE);
-                MediaPlayer mediaPlayer = new MediaPlayer();
-                mediaPlayer = MediaPlayer.create(getContext(), R.raw.dice);
-                mediaPlayer.start();
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        final int min = 1;
-                        final int max = 20;
-                        final int random1to20 = new Random().nextInt((max - min) +1) +min;
-                        Integer number = random1to20;
-                        rollText20.setText(number.toString());
-                        binding.D20RollButton.setEnabled(true);
-                        binding.D20RollButton.setEnabled(true);
-                        binding.D20ButtonD4.setEnabled(true);
-                        binding.D20ButtonD6.setEnabled(true);
-                        binding.D20ButtonD8.setEnabled(true);
-                        binding.D20ButtonD10.setEnabled(true);
-                        binding.D20ButtonD12.setEnabled(true);
-                        binding.D20ButtonD100.setEnabled(true);
-                        D20gif.setVisibility(View.GONE);
-                        D20static.setVisibility(View.VISIBLE);
-                        bNavView.setVisibility(View.VISIBLE);
-                        ranRecently = false;
-                    }
-                },2000); //this is the delay before button is re-activated
+                onRollDice();
             }
         }
 
@@ -119,6 +83,11 @@ public class D20Fragment extends Fragment {
 
         }
     };
+
+    @Override public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        globalList = (GlobalList) getActivity().getApplication();
+    }
 
     @Override
     public View onCreateView(
@@ -130,6 +99,8 @@ public class D20Fragment extends Fragment {
 
         mSensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+        rollHistoryList = globalList.getRollHistoryList();
 
         return binding.getRoot();
 
@@ -240,47 +211,75 @@ public class D20Fragment extends Fragment {
         binding.D20RollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                binding.D20RollButton.setEnabled(false);
-                binding.D20ButtonD4.setEnabled(false);
-                binding.D20ButtonD6.setEnabled(false);
-                binding.D20ButtonD8.setEnabled(false);
-                binding.D20ButtonD10.setEnabled(false);
-                binding.D20ButtonD12.setEnabled(false);
-                binding.D20ButtonD100.setEnabled(false);
-                BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
-                bNavView.setVisibility(View.GONE);
-                String resetString = " ";
-                rollText20.setText(resetString);
-                D20gif.setVisibility(View.VISIBLE);
-                D20static.setVisibility(View.GONE);
-                MediaPlayer mediaPlayer = new MediaPlayer();
-                mediaPlayer = MediaPlayer.create(getContext(), R.raw.dice);
-                mediaPlayer.start();
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        final int min = 1;
-                        final int max = 20;
-                        final int random1to20 = new Random().nextInt((max - min) +1) +min;
-                        Integer number = random1to20;
-                        rollText20.setText(number.toString());
-//                        historyFragment.historyList.add("Rolled" + number.toString() + "using a D20");
-                        binding.D20RollButton.setEnabled(true);
-                        binding.D20ButtonD4.setEnabled(true);
-                        binding.D20ButtonD6.setEnabled(true);
-                        binding.D20ButtonD8.setEnabled(true);
-                        binding.D20ButtonD10.setEnabled(true);
-                        binding.D20ButtonD12.setEnabled(true);
-                        binding.D20ButtonD100.setEnabled(true);
-                        D20gif.setVisibility(View.GONE);
-                        D20static.setVisibility(View.VISIBLE);
-                        bNavView.setVisibility(View.VISIBLE);
-                    }
-                },2000); //this is the delay before button is re-activated
+                onRollDice();
 
             }
         });
 
+    }
+
+    private void onRollDice(){
+        ranRecently = true;
+        binding.D20RollButton.setEnabled(false);
+        binding.D20ButtonD4.setEnabled(false);
+        binding.D20ButtonD6.setEnabled(false);
+        binding.D20ButtonD8.setEnabled(false);
+        binding.D20ButtonD10.setEnabled(false);
+        binding.D20ButtonD10.setEnabled(false);
+        binding.D20ButtonD12.setEnabled(false);
+        binding.D20ButtonD100.setEnabled(false);
+        BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
+        bNavView.setVisibility(View.GONE);
+        String resetString = " ";
+        rollText20.setText(resetString);
+        D20gif.setVisibility(View.VISIBLE);
+        D20static.setVisibility(View.GONE);
+        MediaPlayer mediaPlayer = new MediaPlayer();
+        mediaPlayer = MediaPlayer.create(getContext(), R.raw.dice);
+        mediaPlayer.start();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                final int min = 1;
+                final int max = 20;
+                final int random1to20 = new Random().nextInt((max - min) +1) +min;
+                Integer number = random1to20;
+                rollText20.setText(number.toString());
+                binding.D20RollButton.setEnabled(true);
+                binding.D20RollButton.setEnabled(true);
+                binding.D20ButtonD4.setEnabled(true);
+                binding.D20ButtonD6.setEnabled(true);
+                binding.D20ButtonD8.setEnabled(true);
+                binding.D20ButtonD10.setEnabled(true);
+                binding.D20ButtonD12.setEnabled(true);
+                binding.D20ButtonD100.setEnabled(true);
+                D20gif.setVisibility(View.GONE);
+                D20static.setVisibility(View.VISIBLE);
+                bNavView.setVisibility(View.VISIBLE);
+                if(mainActivity.diceColorRed == true) {
+                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d20_red1);
+                    int nextID = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D20", number, diceImage);
+                    rollHistoryList.add(item);
+                    globalList.setNextID(nextID++);
+                }
+                if(mainActivity.diceColorGreen == true) {
+                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d20_green1);
+                    int nextID = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D20", number, diceImage);
+                    rollHistoryList.add(item);
+                    globalList.setNextID(nextID++);
+                }
+                if(mainActivity.diceColorBlue == true) {
+                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d20_blue1);
+                    int nextID = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D20", number, diceImage);
+                    rollHistoryList.add(item);
+                    globalList.setNextID(nextID++);
+                }
+                ranRecently = false;
+            }
+        },2000); //this is the delay before button is re-activated
     }
 
     public void onResume(){

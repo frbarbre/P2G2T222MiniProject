@@ -1,6 +1,7 @@
 package com.example.p2g2t222mini_project;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -25,6 +26,7 @@ import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 import com.example.p2g2t222mini_project.databinding.FragmentD4Binding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.List;
 import java.util.Random;
 
 import pl.droidsonroids.gif.GifImageView;
@@ -43,6 +45,8 @@ public class D12Fragment extends Fragment {
     private Button D12butD100;
     private Button D12rollBut;
     private ImageView Logo;
+    private List<RollHistoryItem> rollHistoryList;
+    private GlobalList globalList;
 
 
     private MainActivity mainActivity;
@@ -66,45 +70,7 @@ public class D12Fragment extends Fragment {
 
 
             if (accelChangeValue > 12 && ranRecently == false){
-                ranRecently = true;
-                binding.D12RollButton.setEnabled(false);
-                binding.D12ButtonD4.setEnabled(false);
-                binding.D12ButtonD6.setEnabled(false);
-                binding.D12ButtonD8.setEnabled(false);
-                binding.D12ButtonD10.setEnabled(false);
-                binding.D12ButtonD20.setEnabled(false);
-                binding.D12ButtonD100.setEnabled(false);
-                BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
-                bNavView.setVisibility(View.GONE);
-                String resetString = " ";
-                rollText12.setText(resetString);
-                D12gif.setVisibility(View.VISIBLE);
-                D12static.setVisibility(View.GONE);
-                MediaPlayer mediaPlayer = new MediaPlayer();
-                mediaPlayer = MediaPlayer.create(getContext(), R.raw.dice);
-                mediaPlayer.start();
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        final int min = 1;
-                        final int max = 12;
-                        final int random1to12 = new Random().nextInt((max - min) +1) +min;
-                        Integer number = random1to12;
-                        rollText12.setText(number.toString());
-                        binding.D12RollButton.setEnabled(true);
-                        binding.D12RollButton.setEnabled(true);
-                        binding.D12ButtonD4.setEnabled(true);
-                        binding.D12ButtonD6.setEnabled(true);
-                        binding.D12ButtonD8.setEnabled(true);
-                        binding.D12ButtonD10.setEnabled(true);
-                        binding.D12ButtonD20.setEnabled(true);
-                        binding.D12ButtonD100.setEnabled(true);
-                        D12gif.setVisibility(View.GONE);
-                        D12static.setVisibility(View.VISIBLE);
-                        bNavView.setVisibility(View.VISIBLE);
-                        ranRecently = false;
-                    }
-                },2000); //this is the delay before button is re-activated
+                onRollDice();
             }
         }
 
@@ -113,6 +79,11 @@ public class D12Fragment extends Fragment {
 
         }
     };
+
+    @Override public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        globalList = (GlobalList) getActivity().getApplication();
+    }
 
     @Override
     public View onCreateView(
@@ -124,6 +95,8 @@ public class D12Fragment extends Fragment {
 
         mSensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+        rollHistoryList = globalList.getRollHistoryList();
 
         return binding.getRoot();
 
@@ -234,47 +207,74 @@ public class D12Fragment extends Fragment {
         binding.D12RollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                binding.D12RollButton.setEnabled(false);
-                binding.D12ButtonD4.setEnabled(false);
-                binding.D12ButtonD6.setEnabled(false);
-                binding.D12ButtonD8.setEnabled(false);
-                binding.D12ButtonD10.setEnabled(false);
-                binding.D12ButtonD20.setEnabled(false);
-                binding.D12ButtonD100.setEnabled(false);
-                BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
-                bNavView.setVisibility(View.GONE);
-                String resetString = " ";
-                rollText12.setText(resetString);
-                D12gif.setVisibility(View.VISIBLE);
-                D12static.setVisibility(View.GONE);
-                MediaPlayer mediaPlayer = new MediaPlayer();
-                mediaPlayer = MediaPlayer.create(getContext(), R.raw.dice);
-                mediaPlayer.start();
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        final int min = 1;
-                        final int max = 12;
-                        final int random1to12 = new Random().nextInt((max - min) +1) +min;
-                        Integer number = random1to12;
-                        rollText12.setText(number.toString());
-                        binding.D12RollButton.setEnabled(true);
-                        binding.D12RollButton.setEnabled(true);
-                        binding.D12ButtonD4.setEnabled(true);
-                        binding.D12ButtonD6.setEnabled(true);
-                        binding.D12ButtonD8.setEnabled(true);
-                        binding.D12ButtonD10.setEnabled(true);
-                        binding.D12ButtonD20.setEnabled(true);
-                        binding.D12ButtonD100.setEnabled(true);
-                        D12gif.setVisibility(View.GONE);
-                        D12static.setVisibility(View.VISIBLE);
-                        bNavView.setVisibility(View.VISIBLE);
-                    }
-                },2000); //this is the delay before button is re-activated
+                onRollDice();
 
             }
         });
 
+    }
+
+    private void onRollDice(){
+        ranRecently = true;
+        binding.D12RollButton.setEnabled(false);
+        binding.D12ButtonD4.setEnabled(false);
+        binding.D12ButtonD6.setEnabled(false);
+        binding.D12ButtonD8.setEnabled(false);
+        binding.D12ButtonD10.setEnabled(false);
+        binding.D12ButtonD20.setEnabled(false);
+        binding.D12ButtonD100.setEnabled(false);
+        BottomNavigationView bNavView = getActivity().findViewById(R.id.bottom_nav_view);
+        bNavView.setVisibility(View.GONE);
+        String resetString = " ";
+        rollText12.setText(resetString);
+        D12gif.setVisibility(View.VISIBLE);
+        D12static.setVisibility(View.GONE);
+        MediaPlayer mediaPlayer = new MediaPlayer();
+        mediaPlayer = MediaPlayer.create(getContext(), R.raw.dice);
+        mediaPlayer.start();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                final int min = 1;
+                final int max = 12;
+                final int random1to12 = new Random().nextInt((max - min) +1) +min;
+                Integer number = random1to12;
+                rollText12.setText(number.toString());
+                binding.D12RollButton.setEnabled(true);
+                binding.D12RollButton.setEnabled(true);
+                binding.D12ButtonD4.setEnabled(true);
+                binding.D12ButtonD6.setEnabled(true);
+                binding.D12ButtonD8.setEnabled(true);
+                binding.D12ButtonD10.setEnabled(true);
+                binding.D12ButtonD20.setEnabled(true);
+                binding.D12ButtonD100.setEnabled(true);
+                D12gif.setVisibility(View.GONE);
+                D12static.setVisibility(View.VISIBLE);
+                bNavView.setVisibility(View.VISIBLE);
+                if(mainActivity.diceColorRed == true) {
+                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d12_red1);
+                    int nextID = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D12", number, diceImage);
+                    rollHistoryList.add(item);
+                    globalList.setNextID(nextID++);
+                }
+                if(mainActivity.diceColorGreen == true) {
+                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d12_green1);
+                    int nextID = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D12", number, diceImage);
+                    rollHistoryList.add(item);
+                    globalList.setNextID(nextID++);
+                }
+                if(mainActivity.diceColorBlue == true) {
+                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d12_blue1);
+                    int nextID = globalList.getNextID();
+                    RollHistoryItem item = new RollHistoryItem(nextID, "D12", number, diceImage);
+                    rollHistoryList.add(item);
+                    globalList.setNextID(nextID++);
+                }
+                ranRecently = false;
+            }
+        },2000); //this is the delay before button is re-activated
     }
 
         public void onResume(){

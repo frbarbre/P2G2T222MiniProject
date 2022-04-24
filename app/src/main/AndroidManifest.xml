@@ -3,6 +3,7 @@
     package="com.example.p2g2t222mini_project">
 
     <application
+        android:name=".GlobalList"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
