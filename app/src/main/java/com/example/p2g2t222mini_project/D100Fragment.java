@@ -280,21 +280,21 @@ public class D100Fragment extends Fragment {
                 D100static2.setVisibility(View.VISIBLE);
                 bNavView.setVisibility(View.VISIBLE);
                 if(mainActivity.diceColorRed == true) {
-                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d10_red1);
+                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d100_redstatic);
                     int nextID = globalList.getNextID();
                     RollHistoryItem item = new RollHistoryItem(nextID, "D100", Integer.parseInt(rollText100Sum.getText().toString()), diceImage);
                     rollHistoryList.add(item);
                     globalList.setNextID(nextID++);
                 }
                 if(mainActivity.diceColorGreen == true) {
-                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d10_green1);
+                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d100_greenstatic);
                     int nextID = globalList.getNextID();
                     RollHistoryItem item = new RollHistoryItem(nextID, "D100", Integer.parseInt(rollText100Sum.getText().toString()), diceImage);
                     rollHistoryList.add(item);
                     globalList.setNextID(nextID++);
                 }
                 if(mainActivity.diceColorBlue == true) {
-                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d10_blue1);
+                    Drawable diceImage = (Drawable) getResources().getDrawable(R.drawable.d100_bluestatic);
                     int nextID = globalList.getNextID();
                     RollHistoryItem item = new RollHistoryItem(nextID, "D100", Integer.parseInt(rollText100Sum.getText().toString()), diceImage);
                     rollHistoryList.add(item);
