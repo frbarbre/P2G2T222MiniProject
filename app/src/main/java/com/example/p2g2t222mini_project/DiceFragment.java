@@ -45,6 +45,22 @@ public class DiceFragment extends Fragment {
         LogoGreen = (ImageView) getView().findViewById(R.id.LogoDiceGreen);
         LogoBlue = (ImageView) getView().findViewById(R.id.LogoDiceBlue);
 
+        if(mainActivity.diceColorBlue == true){
+            LogoRed.setVisibility(View.GONE);
+            LogoGreen.setVisibility(View.GONE);
+            LogoBlue.setVisibility(View.VISIBLE);
+        }
+        if(mainActivity.diceColorGreen == true){
+            LogoRed.setVisibility(View.GONE);
+            LogoGreen.setVisibility(View.GONE);
+            LogoBlue.setVisibility(View.VISIBLE);
+        }
+        if(mainActivity.diceColorRed == true){
+            LogoRed.setVisibility(View.VISIBLE);
+            LogoGreen.setVisibility(View.GONE);
+            LogoBlue.setVisibility(View.GONE);
+        }
+
 
         binding.DiceGreenButton.setOnClickListener(new View.OnClickListener() {
             @Override

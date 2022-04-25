@@ -10,34 +10,18 @@
         android:id="@+id/HistoryRecycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="62dp"
+        android:layout_marginTop="103dp"
+        android:layout_marginBottom="65dp"
         android:requiresFadingEdge="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LogoD4" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/HistoryListFadeTop"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="125dp"-->
-<!--        android:src="@drawable/historyfragfade"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/HistoryListFadeBottom"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="74dp"-->
-<!--        android:src="@drawable/historyfragfadebottom"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
     <ImageView
-        android:id="@+id/LogoD4"
+        android:id="@+id/LogoHistory"
         android:layout_width="333dp"
         android:layout_height="74dp"
         android:src="@drawable/logored"
@@ -46,5 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.042" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

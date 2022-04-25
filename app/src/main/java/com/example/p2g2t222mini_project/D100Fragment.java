@@ -51,7 +51,6 @@ public class D100Fragment extends Fragment {
     private ImageView Logo;
     private List<RollHistoryItem> rollHistoryList;
     private GlobalList globalList;
-    private HistoryFragment historyFragment;
 
     private double accelCurrentValue;
     private double accelPreviousValue;
