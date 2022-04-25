@@ -52,8 +52,8 @@ public class DiceFragment extends Fragment {
         }
         if(mainActivity.diceColorGreen == true){
             LogoRed.setVisibility(View.GONE);
-            LogoGreen.setVisibility(View.GONE);
-            LogoBlue.setVisibility(View.VISIBLE);
+            LogoGreen.setVisibility(View.VISIBLE);
+            LogoBlue.setVisibility(View.GONE);
         }
         if(mainActivity.diceColorRed == true){
             LogoRed.setVisibility(View.VISIBLE);
