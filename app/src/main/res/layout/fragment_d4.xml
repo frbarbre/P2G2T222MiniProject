@@ -20,8 +20,9 @@
         android:id="@+id/D4ButtonD10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/d4tod10button"
         android:backgroundTint="@color/redbutton"
+        android:text="@string/d4tod10button"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D4ButtonD8" />
 
@@ -29,8 +30,9 @@
         android:id="@+id/D4ButtonD8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="D8"
         android:backgroundTint="@color/redbutton"
+        android:text="D8"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D4ButtonD6" />
 
@@ -38,8 +40,9 @@
         android:id="@+id/D4ButtonD6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="D6"
         android:backgroundTint="@color/redbutton"
+        android:text="D6"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D4NonButton" />
 
@@ -47,8 +50,9 @@
         android:id="@+id/D4ButtonD12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="D12"
         android:backgroundTint="@color/redbutton"
+        android:text="D12"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D4ButtonD10" />
 
@@ -56,8 +60,9 @@
         android:id="@+id/D4ButtonD20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="D20"
         android:backgroundTint="@color/redbutton"
+        android:text="D20"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D4ButtonD12" />
 
@@ -65,8 +70,9 @@
         android:id="@+id/D4ButtonD100"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="D100"
         android:backgroundTint="@color/redbutton"
+        android:text="D100"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/D4ButtonD20" />
 
@@ -76,6 +82,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/selectedbutton"
         android:text="D4"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -97,7 +104,8 @@
         android:id="@+id/D4RollButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Roll"
+        android:text="@string/RollOrShake"
+        android:textColor="@color/white"
         app:backgroundTint="@color/redbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

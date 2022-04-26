@@ -16,70 +16,78 @@
          app:layout_constraintStart_toStartOf="parent"
          app:layout_constraintTop_toTopOf="parent" />
 
-     <Button
-         android:id="@+id/D10ButtonD4"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="@string/D10ButtonToD4"
-         app:layout_constraintBottom_toBottomOf="parent"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintTop_toTopOf="parent"
-         app:layout_constraintVertical_bias="0.25" />
+    <Button
+        android:id="@+id/D10ButtonD4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/D10ButtonToD4"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
 
-     <Button
-         android:id="@+id/D10NonButton"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:backgroundTint="@color/selectedbutton"
-         android:text="D10"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/D10ButtonD8" />
+    <Button
+        android:id="@+id/D10NonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/selectedbutton"
+        android:text="D10"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/D10ButtonD8" />
 
-     <Button
-         android:id="@+id/D10ButtonD6"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="D6"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/D10ButtonD4" />
+    <Button
+        android:id="@+id/D10ButtonD6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D6"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/D10ButtonD4" />
 
-     <Button
-         android:id="@+id/D10ButtonD8"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="D8"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/D10ButtonD6" />
+    <Button
+        android:id="@+id/D10ButtonD8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D8"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/D10ButtonD6" />
 
-     <Button
-         android:id="@+id/D10ButtonD12"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="D12"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/D10NonButton" />
+    <Button
+        android:id="@+id/D10ButtonD12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D12"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/D10NonButton" />
 
-     <Button
-         android:id="@+id/D10ButtonD20"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="D20"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/D10ButtonD12" />
+    <Button
+        android:id="@+id/D10ButtonD20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D20"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/D10ButtonD12" />
 
-     <Button
-         android:id="@+id/D10ButtonD100"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="D100"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/D10ButtonD20" />
+    <Button
+        android:id="@+id/D10ButtonD100"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D100"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/D10ButtonD20" />
 
     <Button
         android:id="@+id/D10RollButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Roll"
+        android:text="@string/RollOrShake"
+        android:textColor="@color/white"
         app:backgroundTint="@color/redbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

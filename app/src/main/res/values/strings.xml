@@ -7,7 +7,7 @@
     <string name="d4tod10button">D10</string>
     <string name="D10ButtonToD4">D4</string>
     <string name="D100RollText"> </string>
-
+    <string name="RollOrShake">Roll or Shake!</string>
     <string name="hello_first_fragment">We are BIGGEST brains</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
